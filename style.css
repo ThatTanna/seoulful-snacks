@@ -64,7 +64,7 @@ nav .navbar-nav li a:hover {
 }
 
 .homebanner .btn-primary:hover {
-  background-color: transparent !6c0c1;
+  background-color: transparent #f2c5c5;
   background-image: linear-gradient(#e07171, #f2c5c5);
   margin-right: 0.5em;
   border: none;
@@ -78,5 +78,9 @@ nav .navbar-nav li a:hover {
 }
 
 .homebanner li {
-  font-size: medium;
+  font-size: x-small;
+  color: #e07171;
 }
+
+
+
