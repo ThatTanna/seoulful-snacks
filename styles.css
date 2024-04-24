@@ -1,0 +1,51 @@
+/* universal settings */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #f2c5c5 !important;
+}
+
+.navbar-primary {
+  /* background-color: #f2c5c5 !important; !important rule overrides the original .bg-primary property */
+}
+
+.logo {
+  width: 100px;
+}
+
+h1 {
+  font-size: 3rem;
+  font-weight: 900;
+}
+
+.btn {
+  font-weight: 500;
+}
+
+.btn:hover {
+  color: white;
+}
+
+nav .navbar-nav li a {
+  color: #e07171 !important;
+  font-weight: bold;
+}
+
+nav .navbar-nav li a:hover {
+  color: white !important;
+  text-decoration: underline !important;
+}
+
+.sociallogo {
+  width: 30px;
+  padding-right: 0.5em;
+} /* banner colours */
+
+.social-logo {
+  height: 10px;
+}

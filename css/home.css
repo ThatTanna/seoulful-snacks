@@ -1,0 +1,34 @@
+.homebanner {
+    min-height: 40dvh;
+    background-image: url("..\images\home\seoulful-banner4.jpg");
+    /* color: #fff; */
+    background-color: #fdf5e5;
+    background-position-y: center;
+    background-position-x: -50dvw;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  
+  .homebanner .btn-primary {
+    background-color: #e07171;
+    margin-right: 0.5em;
+    border: none;
+  }
+  
+  .homebanner .btn-primary:hover {
+    background-color: transparent #f2c5c5;
+    background-image: linear-gradient(#e07171, #f2c5c5);
+    margin-right: 0.5em;
+    border: none;
+  }
+  
+  .homebanner ul {
+    list-style-position: inside;
+    list-style: none;
+    padding-left: 0.2em;
+    padding-bottom: 2em;
+  }
+  
+  .homebanner li {
+    font-size: medium;
+  }
