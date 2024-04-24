@@ -32,3 +32,9 @@
   .homebanner li {
     font-size: medium;
   }
+
+  .banner{
+    height: 50dvh;
+    object-fit: cover;
+    
+  }
