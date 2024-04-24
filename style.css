@@ -78,5 +78,6 @@ nav .navbar-nav li a:hover {
 }
 
 .homebanner li {
-  font-size: medium;
+  font-size: x-small;
+  color: #e07171;
 }
