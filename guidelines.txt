@@ -1,0 +1,13 @@
+Color Palette
+
+Pink:
+#f2c5c5
+#e99b9b
+#e07171
+
+White:
+#ffffff
+
+Dark:
+#493e57
+#302939

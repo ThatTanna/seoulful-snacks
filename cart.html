@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Cart</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="css/cart.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&family=Outfit:wght@100..900&family=Overpass:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap"
+        rel="stylesheet">
+    <!-- Header Component -->
+    <script src="components/header.js" type="text/javascript" defer></script>
+    <script src="components/footer.js" type="text/javascript" defer></script>
+</head>
+
+<body>
+    <header-component></header-component>
+    <main class="m-3">
+        <h1>MY CART</h1>
+        <section class="m-3 p-3">
+            <div class="cart-cards">
+                <!-- @For Loop cards for cart items -->
+                <div class="mx-auto card mb-3" style="max-width: 640px;">
+                    <div class="row g-0">
+                        <div class="col-md-4">
+                            <img src="images/cart/korean-snack-box.webp"
+                                class="border border-5 border-danger-subtle rounded img-fluid rounded-start"
+                                alt="real-pizza-bagel-chip">
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body row">
+                                <h5 class="card-title col-md-10 p-2">Premium Snack Box</h5>
+                                <button type="button" class="btn bi bi-trash col-md-2"></button>
+                                <p class="card-text">Subscription Plan: 12 months (1-year)
+                                    <br> Monthly delivery, charged annually
+                                </p>
+                                <div class="row">
+                                    <div class="btn-group col-md-5" role="group" aria-label="Basic example">
+                                        <button type="button" class="border btn bi bi-dash-circle"></button>
+                                        <button type="button" class="border btn">3</button>
+                                        <button type="button" class="border btn bi bi-plus-circle"></button>
+                                    </div>
+                                    <div class="col-md-7 m-auto">$1,800.00</div>
+                                </div>
+                                <p class="card-text">
+                                    <small class="text-body-secondary">Added to cart 3 mins ago</small>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Dummy Card: Delete after adding logic -->
+                <div class="mx-auto card mb-3" style="max-width: 640px;">
+                    <div class="row g-0">
+                        <div class="col-md-4">
+                            <img src="images/cart/mystery-box.webp"
+                                class="border border-5 border-danger-subtle rounded img-fluid rounded-start"
+                                alt="real-pizza-bagel-chip">
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body row">
+                                <h5 class="card-title col-md-10 p-2">Mystery Box</h5>
+                                <button type="button" class="btn bi bi-trash col-md-2"></button>
+                                <p class="card-text">Subscription Plan: 1 month
+                                    <br> Monthly delivery, charged monthly
+                                </p>
+                                <div class="row">
+                                    <div class="btn-group col-md-5" role="group" aria-label="Basic example">
+                                        <button type="button" class="border btn bi bi-dash-circle"></button>
+                                        <button type="button" class="border btn">6</button>
+                                        <button type="button" class="border btn bi bi-plus-circle"></button>
+                                    </div>
+                                    <div class="col-md-7 m-auto">$1,200.00</div>
+                                </div>
+                                <p class="card-text">
+                                    <small class="text-body-secondary">Added to cart 5 mins ago</small>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <article>
+            <div class="checkout text-center">
+                <button type="button" class="checkout-button btn btn-primary bi bi-cart-fill">Continue to checkout</button>
+            </div>
+        </article>
+    </main>
+    <footer-component></footer-component>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
