@@ -4,10 +4,17 @@
 *::after {
   margin: 0;
   padding: 0;
+  font-family: Roboto, sans-serif;
+}
+
+/* Navbar and footer font */
+.nav-link,
+.fs-6 {
+  font-family: Overpass;
 }
 
 body {
-  background-color: #f2c5c5 !important;
+  /* background-color: #f2c5c5 !important; */
 }
 
 .navbar-primary {
@@ -19,12 +26,21 @@ body {
 }
 
 h1 {
+  font-family: "Josefin Sans";
   font-size: 3rem;
   font-weight: 900;
+  color: #e99b9b;
+}
+
+h6 {
+  font-family: Overpass;
+  font-weight: 700;
+  color: #e07171;
 }
 
 .btn {
   font-weight: 500;
+  /* background-color: #f2c5c5; */
 }
 
 .btn:hover {
@@ -44,7 +60,9 @@ nav .navbar-nav li a:hover {
 .sociallogo {
   width: 30px;
   padding-right: 0.5em;
-} /* banner colours */
+}
+
+/* banner colours */
 
 .social-logo {
   height: 10px;

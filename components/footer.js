@@ -6,7 +6,7 @@ class Footer extends HTMLElement {
   connectedCallback() {
     this.innerHTML = `
     <footer>
-      <div class="container my-5 border-top">
+      <div class="container my-5">
         <div class="row pt-2 justify-content-start">
           <div class="col-md-9 flex-colunm">
             <p class="fs-6">Seoulful Snacks © All rights reserved.</p>
