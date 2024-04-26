@@ -11,7 +11,8 @@ body {
 }
 
 .navbar-primary {
-  /* background-color: #f2c5c5 !important; !important rule overrides the original .bg-primary property */
+  background-color: #f2c5c5 !important; 
+  /* !important rule overrides the original .bg-primary property */
 }
 
 .logo {

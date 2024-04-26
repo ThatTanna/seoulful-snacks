@@ -2,7 +2,7 @@
     min-height: 40dvh;
     background-image: url("..\images\home\seoulful-banner4.jpg");
     /* color: #fff; */
-    background-color: #fdf5e5;
+    background-color: #362d1b;
     background-position-y: center;
     background-position-x: -50dvw;
     background-repeat: no-repeat;
@@ -38,3 +38,10 @@
     object-fit: cover;
     
   }
+
+  .message{
+    background-color: #fdfdfd;
+    height: 400px;
+    margin-top:5rem;
+  }
+
