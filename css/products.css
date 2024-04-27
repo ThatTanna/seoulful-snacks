@@ -1,1 +1,61 @@
+/* Style the images */
+.card {
+    flex: 1; /* Make each image flex equally within the container */
+    height: auto; /* Set image height to auto */
+    object-fit: cover; /* Cover the entire image area while maintaining aspect ratio */
+  }
 
+ /* Style the checkout form section */
+ .checkout-form {
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 5px;
+    margin-top: 20px;
+    width: 50%; 
+  }
+
+ 
+/* Add a background color to the product details section */
+.product-details {
+    background-color: #f5f5f5;
+    padding: 10px;
+    width: 50%; 
+  }
+  /* Style the button */
+  button {
+    background-color: #4CAF50; /* Green */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  /* Change the text color for headings */
+  h1, h2 {
+    color: #333;
+  }
+
+  /* Style the customer reviews section */
+  .customer-reviews {
+    margin-top: 20px;
+  }
+
+  .review {
+    border: 1px solid #ddd;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+  }
+
+  .review p {
+    margin-top: 5px;
+    margin-bottom: 0;
+  }
+
+  .review q {
+    font-style: italic;
+    font-size: 16px;
+  }
+
+  
