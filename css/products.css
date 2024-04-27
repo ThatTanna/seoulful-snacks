@@ -31,10 +31,9 @@
     cursor: pointer;
   }
 
-  /* Change the text color for headings */
-  h1, h2 {
-    color: #333;
-  }
+  /* .option.active {
+    background-color: #f0f0f0; /* Adjust active option color */
+  } */
 
   /* Style the customer reviews section */
   .customer-reviews {
@@ -58,4 +57,7 @@
     font-size: 16px;
   }
 
+  .description {
+    padding-top: 20px;
+  }
   
