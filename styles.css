@@ -17,13 +17,10 @@
   font-family: Overpass;
 }
 
-<<<<<<< HEAD
-=======
 /* body {
   background-color: #f2c5c5 !important;
 } */
 
->>>>>>> bcb65e38cbbd560d23af525f13aa0ddbdd4245c5
 .navbar-primary {
   background-color: #f2c5c5 !important; 
   /* !important rule overrides the original .bg-primary property */
@@ -71,8 +68,6 @@ h6 {
   color: #e99b9b;
 }
 
-<<<<<<< HEAD
-=======
 nav .navbar-nav li a {
   color: #e07171 !important;
   font-weight: bold;
@@ -82,7 +77,6 @@ nav .navbar-nav li a:hover {
   color: #493e57 !important;
 }
 
->>>>>>> bcb65e38cbbd560d23af525f13aa0ddbdd4245c5
 .sociallogo {
   width: 30px;
   padding-right: 0.5em;
