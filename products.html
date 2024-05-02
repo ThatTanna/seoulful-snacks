@@ -16,12 +16,13 @@
     rel="stylesheet">
   <!-- Header + Footer Components -->
   <script src="components/header.js" type="text/javascript" defer></script>
+  <script src="components/footer.js" type="text/javascript" defer></script>
 </head>
 
 <body>
+  <!-- Navbar -->
+  <header-component></header-component>
   <div class="container-lg min-vh-100 p-4">
-    <!-- Navbar -->
-    <header-component></header-component>
     <!-- <div class="row">
         <div class="col-12 d-flex justify-content-end"> -->
 
@@ -34,24 +35,45 @@
 
         </h3>
         <div class="container text-center">
-          <div class="row align-items-start">
+          <div class="row align-items-start" , class="d-flex flex-column">
             <div class="card" style="width: 18rem;">
               <img src="images/cart/korean-snack-box.webp" class="img-fluid" class="rounded-3" alt="A package">
               <div class="card-body">
-                <p class="card-text">Petite K-Treat Taster</p><Br></Br>
+                <h5 class="font-weight-bold">Petite K-Treat Taster</h5><Br>
+                <p class="font-weight-bold text-decoration-underline">Package contain the following snacks:</p>
+                <li>Gim (Roasted Seaweed Sheets),</li>
+                <li>Korean Rice Crackers (Variety Pack),</li>
+                <li> Korean Candies (Yuja, Green Tea Candy, Rice Candy Bar),</li>
+                <li>Korean Soda (Melon or Strawberry)</li><Br></Br>
+                <button class="btn btn-secondary" type="button">Subscribe here</button> <Br></Br>
               </div>
             </div>
             <div class="card" style="width: 18rem;">
               <img src="images/products/premium-snack-box.JPG" class="img-fluid" class="rounded-3" alt="A package">
               <div class="card-body">
-                <p class="card-text">K-Treat Discovery Box</p><Br></Br>
+                <h5 class="font-weight-bold">K-Treat Discovery Box</h5><Br>
+                <p class="font-weight-bold text-decoration-underline">Package contain the following snacks:</p>
+                <li>Pre-made Kimchi Jeon (Kimchi Pancake)</li>
+                <li>Korean Dried Fruits & Seaweed Snacks (Variety Pack)</li>
+                <li>Korean Noodle Salad (DIY)</li>
+                <li>Korean Yogurt Parfait (Fruits & Yogurt)</li>
+                <li>Korean Milk (Banana, Melon, Strawberry)</li> <Br></Br>
+
+                <button class="btn btn-secondary" type="button">Subscribe here</button> <Br></Br>
               </div>
             </div>
             <div class="card" style="width: 18rem;">
               <img src="images/cart/korean-snack-box.webp" class="img-fluid" class="rounded-3" alt="...">
               <div class="card-body">
-                <p class="card-text">K-Treat Treasure Chest</p>
+                <h5 class="font-weight-bold">K-Treat Treasure Chest</h5><Br>
+                <p class="font-weight-bold text-decoration-underline">Package contain the following snacks:</p>
+                <li>Korean Kimbap Bowls (Deconstructed, Smoked Salmon)</li>
+                <li>Korean Fruit Salad (Premium Fruits)</li>
+                <li>Korean Rice Crackers & Dips (Gourmet Crackers, Kimchi Cream Cheese, Truffle Gochujang Mayo)</li>
+                <li>Korean Banchan (Seasoned Seaweed Salad, Marinated Edamame, Spicy Cucumber Kimchi)</li>
+                <li>Korean Tea (Ginseng, Oolong) or Makgeolli (Rice Wine)</li>
                 <Br></Br>
+                <button class="btn btn-secondary" type="button">Subscribe here</button> <Br></Br>
               </div>
             </div>
           </div>
@@ -76,106 +98,27 @@
             <p>- Verified Buyer</p>
           </div>
         </section>
-        <div class="container">
+        <!-- <div class="container">
           <div class="row">
             <h3 class="text-start" class="col-sm-6 ms-auto fw-bold">
               <Br></Br>
               Step 2: Choose your subscription package.
               <Br></Br>
-            </h3>
+            </h3> -->
 
-            <section class="product-details">
 
-              <div class="pricing-options">
-                <div class="plan">
-                  <h3>12 Month Plan</h3>
-                  <p>Save $563.00</p>
-                  <p>Total price: $33.25/month</p>
-                  <button class="btn btn-secondary" type="button">12 Month Plan</button> <Br></Br>
-                </div>
-                <div class="plan">
-                  <h3>6 Month Plan</h3>
-                  <p>Save $24.00</p>
-                  <p>Total price: $34.50/month</p>
-                  <button class="btn btn-secondary" type="button">6 Month Plan</button> <Br></Br>
-                </div>
-                <div class="plan">
-                  <h3>3 Month Plan</h3>
-                  <p>Save $6.00</p>
-                  <p>Total price: $36.50/month</p>
-                  <button class="btn btn-secondary" type="button"> 3 Month Plan</button> <Br></Br>
-                </div>
-                <div class="plan">
-                  <h3>Monthly Plan</h3>
-                  <p>Total price: $38.50/month</p>
-                  <button class="btn btn-secondary" type="button">Monthly Plan</button> <Br></Br>
-                </div>
-              </div>
-            </section>
-            
-            <!-- <button class="option active" data-color="default">Default</button>
+
+        <!-- <button class="option active" data-color="default">Default</button>
             <button class="option" data-color="green">Green</button>
             <button class="option" data-color="blue">Blue</button> -->
 
-            <section class="checkout-form">
-              <h2>Checkout Form</h2>
-              <form action="#">
-                <label for="shipping">Shipping Address</label>
-                <textarea name="shipping" id="shipping" rows="5"></textarea>
-                <br>
-                <label for="payment">Payment Method</label>
-                <select name="payment" id="payment">
-                  <option value="credit-card">Credit Card</option>
-                  <option value="paypal">PayPal</option>
-                </select>
-                <br>
-                <div id="credit-card-info">
-                  <label for="card-number">Card Number</label>
-                  <input type="text" name="card-number" id="card-number">
-                  <br>
-                  <label for="exp-date">Expiration Date</label>
-                  <input type="text" name="exp-date" id="exp-date">
-                  <br>
-                  <label for="cvv">CVV</label>
-                  <input type="text" name="cvv" id="cvv">
-                </div>
-                <div id="paypal-info">
-                </div>
-                <br>
-                <button type="submit">Go to Checkout</button>
-              </form>
-            </section>
-          </div>
-          <div class="description">
-            <!-- <h5 class="text-start">Description</h5> -->
-            <h5>Unleash a Flavor Adventure: Explore the Delights of Korean Snacks!</h5>
-
-            <p>Craving something new and exciting? Look no further than the vibrant world of Korean snacks! These treats
-              are more than just a satisfying bite; they're an **explosion of taste and texture** that will tantalize
-              your taste buds and leave you wanting more.</p>
-
-            <h5>What Makes Seoulful Snacks So Irresistible?</h5>
-
-            <ul>
-              <li><strong>Unique Flavors:</strong> Go beyond the ordinary with unexpected flavor combinations like sweet
-                and spicy, savory and garlicky, or seaweed and sesame.</li>
-              <li><strong>Variety Galore:</strong> From crunchy and chewy to soft and melt-in-your-mouth, Korean snacks
-                offer a texture for every craving. Explore crispy rice cakes, chewy candies, soft and fluffy steamed
-                buns, and everything in between!</li>
-              <li><strong>Visually Appealing:</strong> Korean snacks are not just delicious, they're aesthetically
-                pleasing. Eye-catching packaging and brightly colored candies add to the fun and excitement of trying
-                something new.</li>
-              <li><strong>Perfect for Sharing:</strong> Many Korean snacks are portioned for sharing, making them ideal
-                for parties, gatherings, or simply enjoying with friends and family.</li>
-            </ul>
-
-            <h2>Ready to Embark on Your Korean Snack Adventure with Us?</h2>
-          </div>
+      </div>
 
 
 
-        </div>
-        <!-- <div class="col-sm-6 ms-auto fs-4">
+
+    </div>
+    <!-- <div class="col-sm-6 ms-auto fs-4">
           <button class="btn rounded-4 btn-primary btn-lg" type="button">
             Shop Seoulbox
           </button>
@@ -183,35 +126,17 @@
             Take a Quiz
           </button>
         </div> -->
-      </div>
-    </div>
+  </div>
+  </div>
 
-    <!-- Jumbotron Banner mobile -->
-    <!-- You will need to create a mobile version of the banner -->
-    <!-- in place of the desktop banner when viewed in mobile -->
+  <!-- Jumbotron Banner mobile -->
+  <!-- You will need to create a mobile version of the banner -->
+  <!-- in place of the desktop banner when viewed in mobile -->
 
-    <!-- Footer -->
-    <!-- Footer -->
-    <footer>
-      <div class="container my-5 border-top">
-        <div class="row pt-2 justify-content-start">
-          <div class="col-md-9 flex-colunm">
-            <p class="fs-6">Seoulful Snacks © All rights reserved.</p>
-          </div>
-          <div class="col-md-3 d-inline-flex">
-            <div class="d-block w-75 ms-2">
-              <!-- TikTok logo -->
-              <img src="images/logos/tiktok-logo.png" class="sociallogo" />
-              <!-- FB Logo -->
-              <img src="images/logos/facebook-logo.png" class="sociallogo" />
-              <!-- Instagram logo -->
-              <img src="images/logos/instagram-logo.png" class="sociallogo" />
-            </div>
-          </div>
-        </div>
-      </div>
-
-    </footer>
+  <!-- Footer -->
+  <footer-component></footer-component>
+  <!-- Footer -->
+  
   </div>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"

@@ -28,7 +28,7 @@ class Header extends HTMLElement {
               <a class="nav-link" href="login.html" >Login</a>
               </li>
               <li class="nav-item">
-              <a class="nav-link" href="/cart.html" >Cart</a>
+              <a class="nav-link" href="cart.html" >Cart</a>
               </li>
             </ul>
           </div>
