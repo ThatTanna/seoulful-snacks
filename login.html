@@ -21,14 +21,14 @@
 
 <body>
     <!-- Meta SDK for facebook login button -->
-    <div id="fb-root"></div>
+    <!-- <div id="fb-root"></div>
     <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v19.0"
-        nonce="mgCzSHsV"></script>
+        nonce="mgCzSHsV"></script> -->
     <!-- Google login button -->
-    <script src="https://accounts.google.com/gsi/client" async></script>
+    <!-- <script src="https://accounts.google.com/gsi/client" async></script>
     <div id="g_id_onload" data-client_id="YOUR_GOOGLE_CLIENT_ID"
         data-login_uri="https://your.domain/your_login_endpoint" data-auto_prompt="false">
-    </div>
+    </div> -->
 
     <header-component></header-component>
     <main class="m-3">
@@ -61,24 +61,24 @@
                 <a class="link-secondary" href="signup.html">Create account</a>
             </div>
 
-            <div class="separator my-3 text-body-tertiary">OR</div>
+            <!-- <div class="separator my-3 text-body-tertiary">OR</div> -->
 
             <!-- Single sign on buttons -->
             <!-- IMPORTANT: Don't bother trying to resize or re-arrange the layout. Some platforms are very restrictive on how their buttons can appear and will not follow your css/bootstrap classes -->
-            <div class="d-flex justify-content-center">
+            <!-- <div class="d-flex justify-content-center"> -->
                 <!-- https://developers.google.com/identity/gsi/web/guides/display-button -->
                 <!-- Does not work unless configured with a valid client id for OAuth flow-->
-                <div class="m-1 g_id_signin" data-type="standard" data-size="large" data-theme="outline"
+                <!-- <div class="m-1 g_id_signin" data-type="standard" data-size="large" data-theme="outline"
                     data-text="sign_in_with" data-shape="rectangular" data-logo_alignment="left">
-                </div>
+                </div> -->
 
                 <!-- https://developers.facebook.com/docs/facebook-login/web -->
                 <!-- Will not work unless your application is registered with Meta and you associate it with a Meta developer account -->
                 <!-- Not re-sizeble unless you implement your own javascript and call their SDK yourself -->
-                <div class="m-1 fb-login-button" data-width="" data-size="large" data-button-type="" data-layout=""
+                <!-- <div class="m-1 fb-login-button" data-width="" data-size="large" data-button-type="" data-layout=""
                     data-auto-logout-link="false" data-use-continue-as="false">
                 </div>
-            </div>
+            </div> -->
         </section>
     </main>
     <footer-component></footer-component>
