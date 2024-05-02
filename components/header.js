@@ -19,19 +19,16 @@ class Header extends HTMLElement {
           <div class="collapse navbar-collapse" id="siteMenu">
             <ul class="navbar-nav ms-auto mb-lg-0">
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Subscribe Now!</a>
+                <a class="nav-link active" aria-current="page" href="products.html">Subscribe Now!</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="about.html">About</a>
               </li>
               <li class="nav-item">
-              <a class="nav-link" href="contact.html">Contact</a>
-              </li>
-              <li class="nav-item">
               <a class="nav-link" href="login.html" >Login</a>
               </li>
               <li class="nav-item">
-              <a class="nav-link" href="/cart.html" >Cart</a>
+              <a class="nav-link" href="cart.html" >Cart</a>
               </li>
             </ul>
           </div>
