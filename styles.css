@@ -13,12 +13,13 @@
   font-family: Overpass;
 }
 
-body {
-  /* background-color: #f2c5c5 !important; */
-}
+/* body {
+  background-color: #f2c5c5 !important;
+} */
 
 .navbar-primary {
-  /* background-color: #f2c5c5 !important; !important rule overrides the original .bg-primary property */
+  background-color: #f2c5c5 !important; 
+  /* !important rule overrides the original .bg-primary property */
 }
 
 .logo {
@@ -32,6 +33,7 @@ h1 {
   color: #e99b9b;
 }
 
+
 h6 {
   font-family: Overpass;
   font-weight: 700;
@@ -44,7 +46,7 @@ h6 {
 }
 
 .btn:hover {
-  color: white;
+  color: #e99b9b;
 }
 
 nav .navbar-nav li a {
@@ -53,8 +55,7 @@ nav .navbar-nav li a {
 }
 
 nav .navbar-nav li a:hover {
-  color: white !important;
-  text-decoration: underline !important;
+  color: #493e57 !important;
 }
 
 .sociallogo {
@@ -67,3 +68,4 @@ nav .navbar-nav li a:hover {
 .social-logo {
   height: 10px;
 }
+
