@@ -39,9 +39,19 @@
     
   }
 
-  .message{
-    background-color: #fdfdfd;
-    height: 400px;
-    margin-top:5rem;
+  h2{
+    color: #e07171;
   }
+
+  .unbox-title h1{
+    color: black;
+    font-size: 1.5rem;
+  }
+
+  .carousel-caption {
+    color: #e07171;
+    background-color: white !important;
+    padding-bottom: 0.5rem;
+  }
+
 
