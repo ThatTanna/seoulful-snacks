@@ -44,7 +44,7 @@ h6 {
 }
 
 .btn:hover {
-  color: white;
+  color: #e99b9b;
 }
 
 nav .navbar-nav li a {
@@ -53,8 +53,7 @@ nav .navbar-nav li a {
 }
 
 nav .navbar-nav li a:hover {
-  color: white !important;
-  text-decoration: underline !important;
+  color: #493e57 !important;
 }
 
 .sociallogo {
