@@ -52,6 +52,6 @@
 .btn {
   position: absolute;  /* Make button absolute relative to container */
   bottom: 50px;  /* Position 10px from the bottom */
-  
+  background-color: #e07171;
 }
 
