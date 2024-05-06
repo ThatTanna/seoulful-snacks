@@ -71,11 +71,10 @@ h2 {
 
 #contactsection {
   width: 50%;
-  margin-left: 8%;
+  margin:auto;
   height: 100dvh;
 }
 
-/* set the profilecontainer */
 .contactcontainer {
   flex: 1;
   display: flex;
