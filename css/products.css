@@ -1,63 +1,57 @@
 /* Style the images */
 .card {
-    flex: 1; /* Make each image flex equally within the container */
-    height: auto; /* Set image height to auto */
-    object-fit: cover; /* Cover the entire image area while maintaining aspect ratio */
-  }
+  flex: 1;
+  /* Make each image flex equally within the container */
+  height: 900px;
+  /* Set image height to auto */
+  object-fit: cover;
+  /* Cover the entire image area while maintaining aspect ratio */
+}
 
- /* Style the checkout form section */
- .checkout-form {
-    border: 1px solid #ddd;
-    padding: 20px;
-    border-radius: 5px;
-    margin-top: 20px;
-    width: 50%; 
-  }
 
- 
+
 /* Add a background color to the product details section */
 .product-details {
-    background-color: #f5f5f5;
-    padding: 10px;
-    width: 50%; 
-  }
-  /* Style the button */
-  button {
-    background-color: #4CAF50; /* Green */
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-  }
+  background-color: #f5f5f5;
+  padding: 10px;
+  width: 50%;
+}
 
-  /* .option.active {
-    background-color: #f0f0f0; /* Adjust active option color */
-  } */
+/* Style the customer reviews section */
+.customer-reviews {
+  margin-top: 50px;
+  margin-bottom: 50px;
 
-  /* Style the customer reviews section */
-  .customer-reviews {
-    margin-top: 20px;
-  }
+}
 
-  .review {
-    border: 1px solid #ddd;
-    padding: 15px;
-    margin-bottom: 10px;
-    border-radius: 5px;
-  }
+.container {
+  border: solid, 10px red;
+}
 
-  .review p {
-    margin-top: 5px;
-    margin-bottom: 0;
-  }
+.review {
+  border: 1px solid #ddd;
+  padding: 15px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+}
 
-  .review q {
-    font-style: italic;
-    font-size: 16px;
-  }
+.review p {
+  margin-top: 5px;
+  margin-bottom: 0;
+}
 
-  .description {
-    padding-top: 20px;
-  }
-  
+.review q {
+  font-style: italic;
+  font-size: 16px;
+}
+
+.description {
+  padding-top: 20px;
+}
+
+.btn {
+  position: absolute;  /* Make button absolute relative to container */
+  bottom: 50px;  /* Position 10px from the bottom */
+  background-color: #e07171;
+}
+
