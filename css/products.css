@@ -1,11 +1,12 @@
 /* Style the images */
-.card {
+.product-card {
   flex: 1;
   /* Make each image flex equally within the container */
   height: 900px;
   /* Set image height to auto */
   object-fit: cover;
   /* Cover the entire image area while maintaining aspect ratio */
+  border: solid lightgrey 1px;
 }
 
 
@@ -49,9 +50,35 @@
   padding-top: 20px;
 }
 
-.btn {
-  position: absolute;  /* Make button absolute relative to container */
-  bottom: 50px;  /* Position 10px from the bottom */
-  background-color: #e07171;
+.product-btn:hover {
+  background-color: lightgrey;
 }
 
+.product-btn {
+  position: absolute;
+  /* Make button absolute relative to container */
+  bottom: 50px;
+  /* Position from the bottom; */
+  background-color: #e07171;
+  border-radius: 12px;
+}
+
+
+.hidden-message {
+  display: none;
+  /* Initially hidden */
+  border: solid 2px;
+  background-color: #e07171;
+  border-radius: 12px;
+  padding: 15px;
+  position: fixed;
+  /* Make it positioned relative to the viewport */
+  top: 50%;
+  /* Vertical centering: 50% from the top */
+  left: 50%;
+  /* Horizontal centering: 50% from the left */
+  transform: translate(-50%, -50%);
+  /* Adjust positioning based on element size */
+  text-align: center;
+  /* Center the text content */
+}
