@@ -34,6 +34,7 @@
           <Br></Br>
 
         </h3>
+        
         <div class="product-cart text-center">
           <div class="row align-items-start" , class="d-flex flex-column">
             <div class="product-card" style="width: 18rem;">
@@ -54,6 +55,17 @@
                   <a href="products.html"> <button class="btn btn-primary" id="cartActionBtn">Back to Snacks
                     </button></a>
                 </p>
+                <script>
+                  const subscribeButton = document.getElementById('subscribeButton');
+                  const subscribeMessage = document.getElementById('subscribeMessage');
+                  
+                  subscribeButton.addEventListener('click', () => {
+                    subscribeMessage.style.display = 'block'; // Show the message on click
+                    setTimeout(() => {
+                      subscribeMessage.style.display = 'none'; // Hide the message after a delay (optional)
+                    }, 3000); // Adjust delay (in milliseconds) as needed
+                  });
+                </script>
                 <Br></Br>
               </div>
             </div>
@@ -68,15 +80,26 @@
                 <li>Korean Yogurt Parfait (Fruits & Yogurt)</li>
                 <li>Korean Milk (Banana, Melon, Strawberry)</li> <Br></Br>
 
-                <button class="product-btn btn-secondary p-2" type="button" id="subscribeButton">
+                <button class="product-btn btn-secondary p-2" type="button" id="subscribeButton1">
                   Subscribe here
                 </button>
-                <p id="subscribeMessage" class="hidden-message">You have subscribed successfully!</Br></Br>
+                <p id="subscribeMessage1" class="hidden-message">You have subscribed successfully!</Br></Br>
                   <a href="cart.html"><button class="btn btn-primary" id="cartActionBtn">Checkout Now
                     </button> </a>
                   <a href="products.html"> <button class="btn btn-primary" id="cartActionBtn">Back to Snacks
                     </button></a>
                 </p>
+                <script>
+                  const subscribeButton1 = document.getElementById('subscribeButton1');
+                  const subscribeMessage1 = document.getElementById('subscribeMessage1');
+                  
+                  subscribeButton1.addEventListener('click', () => {
+                    subscribeMessage1.style.display = 'block'; // Show the message on click
+                    setTimeout(() => {
+                      subscribeMessage1.style.display = 'none'; // Hide the message after a delay (optional)
+                    }, 3000); // Adjust delay (in milliseconds) as needed
+                  });
+                </script>
                 <Br></Br>
               </div>
             </div>
@@ -92,23 +115,23 @@
                 <li>Korean Tea (Ginseng, Oolong) or Makgeolli (Rice Wine)</li>
                 <Br></Br>
 
-                <button class="product-btn btn-secondary p-2" type="button" id="subscribeButton">
+                <button class="product-btn btn-secondary p-2" type="button" id="subscribeButton2">
                   Subscribe here
                 </button>
-                <p id="subscribeMessage" class="hidden-message">You have subscribed successfully!</Br></Br>
+                <p id="subscribeMessage2" class="hidden-message">You have subscribed successfully!</Br></Br>
                   <a href="cart.html"><button class="btn btn-primary" id="cartActionBtn">Checkout Now
                     </button> </a>
                   <a href="products.html"> <button class="btn btn-primary" id="cartActionBtn">Back to Snacks
                     </button></a>
                 </p>
                 <script>
-                  const subscribeButton = document.getElementById('subscribeButton');
-                  const subscribeMessage = document.getElementById('subscribeMessage');
-
-                  subscribeButton.addEventListener('click', () => {
-                    subscribeMessage.style.display = 'block'; // Show the message on click
+                  const subscribeButton2 = document.getElementById('subscribeButton2');
+                  const subscribeMessage2 = document.getElementById('subscribeMessage2');
+                  
+                  subscribeButton2.addEventListener('click', () => {
+                    subscribeMessage2.style.display = 'block'; // Show the message on click
                     setTimeout(() => {
-                      subscribeMessage.style.display = 'none'; // Hide the message after a delay (optional)
+                      subscribeMessage2.style.display = 'none'; // Hide the message after a delay (optional)
                     }, 3000); // Adjust delay (in milliseconds) as needed
                   });
                 </script>
@@ -155,6 +178,8 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
     crossorigin="anonymous"></script>
+
+   
 </body>
 
 </html>
