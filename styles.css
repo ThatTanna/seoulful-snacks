@@ -52,6 +52,13 @@ h1 {
   color: #e99b9b;
 }
 
+h3 {
+  font-family: "Josefin Sans";
+  font-size: 2rem;
+  font-weight: 900;
+  color: #e07171;
+}
+
 
 h6 {
   font-family: Overpass;
@@ -61,11 +68,12 @@ h6 {
 
 .btn {
   font-weight: 500;
-  /* background-color: #f2c5c5; */
+  background-color: #e99b9b;
 }
 
 .btn:hover {
-  color: #e99b9b;
+  background-color: #e07171;
+  color: #ffffff;
 }
 
 nav .navbar-nav li a {
@@ -88,3 +96,7 @@ nav .navbar-nav li a:hover {
   height: 10px;
 }
 
+.primary-color {
+  background-color: #e99b9b;
+  color: white;
+}
