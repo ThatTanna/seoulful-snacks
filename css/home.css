@@ -1,42 +1,13 @@
-.homebanner {
-  min-height: 40dvh;
-  background-image: url("..\images\home\seoulful-banner4.jpg");
-  /* color: #fff; */
-  background-color: #362d1b;
-  background-position-y: center;
-  background-position-x: -50dvw;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-
-.homebanner .btn-primary {
-  background-color: #e07171;
-  margin-right: 0.5em;
-  border: none;
-}
-
-.homebanner .btn-primary:hover {
-  background-color: transparent #f2c5c5;
-  background-image: linear-gradient(#e07171, #f2c5c5);
-  margin-right: 0.5em;
-  border: none;
-}
-
-.homebanner ul {
-  list-style-position: inside;
-  list-style: none;
-  padding-left: 0.2em;
-  padding-bottom: 2em;
-}
-
-.homebanner li {
-  font-size: medium;
-}
-
 .banner {
   height: 50dvh;
   object-fit: cover;
-  width: 50%;
+  border: 3px solid #e99b9b;
+}
+
+.small-banner{
+  height: 70dvh;
+  object-fit: cover;
+  border: 3px #e99b9b solid;
 }
 
 .slide {
@@ -58,6 +29,10 @@ h2 {
   font-size: 2rem;
 }
 
+.card{
+  border: 5px solid #e99b9b !important;
+}
+
 .carousel-caption {
   color: #ffffff;
   background-color: #e07171;
@@ -66,63 +41,60 @@ h2 {
 }
 
 .contact{
-  margin-top: 2rem;
+  margin-top: 4rem;
+  color: #000000;
 }
 
 #contactsection {
-  width: 50%;
+  width: 80%;
   margin:auto;
-  height: 100dvh;
 }
 
 .contactcontainer {
-  flex: 1;
   display: flex;
   flex-direction: column;
-  align-items: normal;
   padding: 5%;
   border-radius: 20px;
-  border: 2px solid #e07171;
+  border: 10px solid #e99b9b;
 }
 
 label {
   display: block;
+  color: #000000;
+  font-weight: 900; 
 }
 
-input[type=text],
-input[type=email],
-textarea {
+input[type=text], input[type=email], textarea {
   padding: 10px 20px;
   margin-bottom: 20px;
-  width: 80%;
+  width: 100%;
   font-size: medium;
   color: #e07171;
-  border: 1px solid #e07171;
+  border: 3px solid #e99b9b;
   border-radius: 10px;
   cursor: pointer;
   text-decoration: none;
 }
 
 button[type="submit"] {
-  padding:
-    10px 20px;
-  font-size: 16px;
-  background: #e07171;
-  color: #ffffff;
-  border: 0px;
+  margin-right: 0.5em;
+  padding: 10px 20px;
+  background: #f2c5c5;
+  color: #e07171;
+  font-weight: 800;
+  border: 3px solid #e99b9b;
   border-radius: 10px;
-  margin-right: 5px;
   cursor: pointer;
 }
 
 
 button[type="reset"] {
   padding: 10px 20px;
-  font-size: 16px;
-  background: #e07171;
-  color: #ffffff;
-  border: 0px;
+  background: #f2c5c5;
+  color: #e07171;
+  font-weight: 800;
+  border: 3px solid #e99b9b;
+
   border-radius: 10px;
-  margin-right: 5px;
   cursor: pointer;
 }
