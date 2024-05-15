@@ -7,6 +7,10 @@
   font-family: Roboto, sans-serif;
 }
 
+.logo {
+  width: 100px;
+}
+
 /* Navbar and footer font */
 .nav-link,
 .fs-6 {
@@ -22,9 +26,24 @@
   /* !important rule overrides the original .bg-primary property */
 }
 
-.logo {
-  width: 100px;
+nav .navbar-nav li a {
+  color: #e07171 !important;
+  font-weight: bold;
 }
+
+nav .navbar-nav li a:hover {
+  color: white !important;
+  text-decoration: underline !important;
+}
+
+.navbar {
+  --bs-navbar-toggler-icon-bg: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgb(255,0,0)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+}
+
+body {
+  /* background-color: #f2c5c5 !important; */
+}
+
 
 h1 {
   font-family: "Josefin Sans";
@@ -55,7 +74,7 @@ nav .navbar-nav li a {
 }
 
 nav .navbar-nav li a:hover {
-  color: #493e57 !important;
+  color: #000000 !important;
 }
 
 .sociallogo {
