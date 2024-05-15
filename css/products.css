@@ -55,7 +55,6 @@
 }
 
 .product-btn {
-  position: absolute;
   /* Make button absolute relative to container */
   bottom: 50px;
   /* Position from the bottom; */
