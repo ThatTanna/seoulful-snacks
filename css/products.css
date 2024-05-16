@@ -1,6 +1,6 @@
 /* Style the images */
 .product-card {
-  flex: 1;
+  position: relative;
   /* Make each image flex equally within the container */
   height: 900px;
   /* Set image height to auto */
@@ -71,7 +71,7 @@
 .product-btn {
   display: absolute;
   /* Make button absolute relative to container */
-  bottom: 10px;
+  bottom: 1px;
   left: 50%;
   font-weight: 500;
   background-color: #e99b9b;
@@ -110,14 +110,14 @@
   top: 0;
   /* border: solid black; */
   width: 50%;
-  height: 0%;
+  height: 80%;
   background-color: #ffffff;
   text-align: center;
 }
 
 #popupForm form {
-  background-color: white;
-  padding: 20px;
+  background-color: #ffffff;
+  padding: 10px;
   /* border: solid black; */
   border-radius: 5px;
   margin-top: 100px;
@@ -148,6 +148,20 @@
 }
 
 .sendButton:hover {
+  background-color: #e07171;
+  color: #ffffff;
+}
+
+#feedbackButton {
+  margin-top: 10px;
+  background-color: #e99b9b;
+  border: solid black;
+  padding: 10px 20px;
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+#feedbackButton:hover {
   background-color: #e07171;
   color: #ffffff;
 }
