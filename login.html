@@ -16,41 +16,87 @@
     <!-- Header Component -->
     <script src="components/header.js" type="text/javascript" defer></script>
     <script src="components/footer.js" type="text/javascript" defer></script>
+    <script src="components/login.js" type="text/javascript" defer></script>
 </head>
 
 <body>
+    <script>
+        async function submitForm() {
+
+            // Get toast element
+            const toastElement = document.getElementById("msg-toast");
+            const toastBodyElement = document.getElementById("msg-toast-body");
+
+            event.preventDefault();
+            const email = document.getElementById("txtEmail");
+            const password = document.getElementById("txtPassword");
+
+            // Send the information from the form here to authenticate
+            const api = "http://localhost:8080/auth/api/login";
+            const result = await logIn({ email: email.value, password: password.value, api: api });
+
+            // If the result is false, display an error message and return
+            if (!result) {
+                showToast({ toastElement, toastBodyElement, bgColor: "danger", msg: "Invalid credentials provided. Please try again." });
+                return;
+            }
+
+            // Store the token and refresh token in local storage and display a success message
+            const access = result.token;
+            const refresh = result.refreshToken;
+            window.localStorage.setItem("token", access);
+            window.localStorage.setItem("refreshToken", refresh);
+
+            showToast({ toastElement, toastBodyElement, bgColor: "success", msg: "Login successful, please wait..." });
+
+
+            // Wait for 1 seconds
+            const sleep = (delay) => new Promise((resolve) => setTimeout(resolve, delay))
+            await sleep(1000)
+
+            // Redirect the user
+            var url = "/profile.html";
+            window.location = url;
+
+            return;
+
+        }
+    </script>
     <header-component></header-component>
     <main class="m-3">
         <h1 class="text-center mb-4">Login</h1>
         <section class="container w-50">
-            <form name="registerForm" method="post" action="" class="needs-validation form-group-lg" novalidate
-                onsubmit="return submitForm();">
-
+            <form name="loginForm" onsubmit="return submitForm();" class="needs-validation input-group-lg" novalidate>
                 <div class="row">
                     <!-- Email -->
-                    <div class="col-12 form-group mb-3">
+                    <div class="col-12 input-group mb-3">
                         <!-- <label for="txtEmail" class="form-label">Email</label> -->
-                        <input type="email" class="form-control" id="txtEmail" name="txtEmail" placeholder="Email"
-                            required>
+                        <input type="email" class="form-control" id="txtEmail" name="txtEmail" placeholder="Email" pattern="[^@\s]+@[^@\s]+\.[^@\s]+" required>
+                        <div class="invalid-feedback">
+                            Email is required
+                        </div>
                     </div>
 
                     <!-- Password -->
-                    <div class="col-12 form-group mb-2">
+                    <div class="col-12 input-group mb-2">
                         <!-- <label for="txtPassword" class="form-label">Password</label> -->
                         <input type="password" class="form-control" id="txtPassword" name="txtPassword"
                             placeholder="Password" required>
+                        <div class="invalid-feedback">
+                            Password is required
+                        </div>
                     </div>
                     <a class="mb-3 link-secondary" href="https://www.facebook.com/watch/?v=10155960122502598">Forgot
                         your password?</a>
                     <button type="submit" class="btn btn-lg btn-block btn-dark mx-auto w-25 my-3 rounded-pill">Sign in</button>
                 </div>
             </form>
-
             <div class="text-center">
                 <a class="link-secondary" href="signup.html">Create account</a>
             </div>
         </section>
     </main>
+    <script src="components/validation.js" type="text/javascript" defer></script>
     <footer-component></footer-component>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"

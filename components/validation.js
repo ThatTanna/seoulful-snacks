@@ -17,3 +17,19 @@
         }, false)
     })
 })()
+
+
+
+// Toast functionality for validation or form submission
+function showToast({toastElement, toastBodyElement, bgColor, msg}){
+    // Run BootStrap5's toast to show the activity is complete.
+    const toastEl = toastElement;
+    const toastBody = toastBodyElement;
+    toastEl.classList.remove("bg-success"); //remove all known and used colors here first
+    toastEl.classList.remove("bg-danger");  //remove all known and used colors here first
+    toastEl.classList.add(`bg-${bgColor}`);
+    toastEl.classList.add("text-white");
+    toastBody.textContent = msg;
+    const toast = new bootstrap.Toast(toastEl);
+    toast.show();
+}
