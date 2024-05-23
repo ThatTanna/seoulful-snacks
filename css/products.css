@@ -9,6 +9,15 @@
   border: solid lightgrey 1px;
 }
 
+.snack-infor {
+  height: 300px;
+  padding: 0.3em;
+}
+
+.snack-infor li {
+  list-style-type: none;
+}
+
 /* h1 {
   font-family: "Josefin Sans";
   font-size: 3rem;
@@ -60,13 +69,10 @@
   color: #ffffff;
 }
 
-
-
 .btn:hover {
   background-color: #e07171;
   color: #ffffff;
 }
-
 
 .product-btn {
   display: absolute;
@@ -75,9 +81,6 @@
   left: 50%;
   font-weight: 500;
   background-color: #e99b9b;
-
-  /* Position from the bottom; */
-
   border-radius: 12px;
 }
 
