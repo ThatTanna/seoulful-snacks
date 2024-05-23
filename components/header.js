@@ -1,10 +1,10 @@
 class Header extends HTMLElement {
-    constructor() {
-        super();
-    }
+  constructor() {
+    super();
+  }
 
-    connectedCallback() {
-        this.innerHTML = `
+  connectedCallback() {
+    this.innerHTML = `
       <header>
       <nav class="navbar navbar-expand-md" aria-label="site navigation bar">
         <div class="container-fluid">
@@ -35,8 +35,21 @@ class Header extends HTMLElement {
         </div>
       </nav>
     </header>
-      `;
-    }
+    <!-- toast section -->
+    <!-- https://getbootstrap.com/docs/5.3/components/toasts/ --> 
+    <div class="toast-container p-3 top-0 start-50 translate-middle-x">
+        <!-- Put toasts within -->
+        <div id="msg-toast" class="toast align-items-center mt-2" role="alert" aria-live="assertive" aria-atomic="true" data-bs-autohide="true" data-bs-delay="4000">
+            <div class="d-flex">
+                <div id="msg-toast-body" class="toast-body"> 
+                <!-- Message to be added here -->
+                </div>
+                <button type="button" class="btn-close me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+            </div>
+        </div>
+    </div>
+    `;
+  }
 }
 
 customElements.define('header-component', Header);
