@@ -7,7 +7,28 @@
 
   }
 
-.card img{
+.prof{
     padding: 2em;
-    border-radius: 8em !important;
+    border-radius: 12em !important;
 }
+
+.socialogo{
+  width: 5dvh;
+  cursor: pointer;
+}
+
+.linkedin{
+  width: 8.5dvh;
+  margin: auto;
+  cursor: pointer;
+
+}
+
+.prof-francis{
+  width: 96%;
+  margin: auto;
+  padding: 2em;
+  border-radius: 12em !important;
+
+}
+
