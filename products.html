@@ -48,10 +48,12 @@
                 <div class="card-body">
                   <h5 class="font-weight-bold">Petite K-Treat Taster</h5><Br>
                   <p class="font-weight-bold text-decoration-underline">Package contain the following snacks:</p>
-                  <li>Gim (Roasted Seaweed Sheets),</li>
-                  <li>Korean Rice Crackers (Variety Pack),</li>
-                  <li> Korean Candies (Yuja, Green Tea Candy, Rice Candy Bar),</li>
-                  <li>Korean Soda (Melon or Strawberry)</li><Br></Br>
+                  <ul class="snack-infor">
+                    <li>Gim (Roasted Seaweed Sheets),</li>
+                    <li>Korean Rice Crackers (Variety Pack),</li>
+                    <li> Korean Candies (Yuja, Green Tea Candy, Rice Candy Bar),</li>
+                    <li>Korean Soda (Melon or Strawberry)</li>
+                  </ul>
                   <button class="product-btn btn-secondary p-2" type="button" id="subscribeButton">
                     Subscribe here
                   </button>
@@ -83,11 +85,13 @@
                 <div class="card-body">
                   <h5 class="font-weight-bold">K-Treat Discovery Box</h5><Br>
                   <p class="font-weight-bold text-decoration-underline">Package contain the following snacks:</p>
-                  <li>Pre-made Kimchi Jeon (Kimchi Pancake)</li>
-                  <li>Korean Dried Fruits & Seaweed Snacks (Variety Pack)</li>
-                  <li>Korean Noodle Salad (DIY)</li>
-                  <li>Korean Yogurt Parfait (Fruits & Yogurt)</li>
-                  <li>Korean Milk (Banana, Melon, Strawberry)</li> <Br></Br>
+                  <ul class="snack-infor">
+                    <li>Pre-made Kimchi Jeon (Kimchi Pancake)</li>
+                    <li>Korean Dried Fruits & Seaweed Snacks (Variety Pack)</li>
+                    <li>Korean Noodle Salad (DIY)</li>
+                    <li>Korean Yogurt Parfait (Fruits & Yogurt)</li>
+                    <li>Korean Milk (Banana, Melon, Strawberry)</li>
+                  </ul>
 
                   <button class="product-btn btn-secondary p-2" type="button" id="subscribeButton1">
                     Subscribe here
@@ -108,6 +112,15 @@
                         subscribeMessage1.style.display = 'none'; // Hide the message after a delay (optional)
                       }, 5000); // Adjust delay (in milliseconds) as needed
                     });
+
+                    // subscribeButton1.addeventListener("click", (event) => {
+                    //   var url = window.location.origin; // will always be localhost:8080
+                    //   url += "/checkout.html";
+                    //   url += "?subcribeType=subscription1";
+                    //   window.location.replace(url);   // http://localhost:8080?subscribeType=subscription1
+                    //   return;
+                    // });
+
                   </script>
                   <Br></Br>
                 </div>
@@ -120,12 +133,14 @@
                 <div class="card-body">
                   <h5 class="font-weight-bold">K-Treat Treasure Chest</h5><Br>
                   <p class="font-weight-bold text-decoration-underline">Package contain the following snacks:</p>
-                  <li>Korean Kimbap Bowls (Deconstructed, Smoked Salmon)</li>
-                  <li>Korean Fruit Salad (Premium Fruits)</li>
-                  <li>Korean Rice Crackers & Dips (Gourmet Crackers, Kimchi Cream Cheese, Truffle Gochujang Mayo)</li>
-                  <li>Korean Banchan (Seasoned Seaweed Salad, Marinated Edamame, Spicy Cucumber Kimchi)</li>
-                  <li>Korean Tea (Ginseng, Oolong) or Makgeolli (Rice Wine)</li>
-                  <Br></Br>
+                  <ul class="snack-infor">
+                    <li>Korean Kimbap Bowls (Deconstructed, Smoked Salmon)</li>
+                    <li>Korean Fruit Salad (Premium Fruits)</li>
+                    <li>Korean Rice Crackers & Dips (Gourmet Crackers, Kimchi Cream Cheese, Truffle Gochujang Mayo)</li>
+                    <li>Korean Banchan (Seasoned Seaweed Salad, Marinated Edamame, Spicy Cucumber Kimchi)</li>
+                    <li>Korean Tea (Ginseng, Oolong) or Makgeolli (Rice Wine)</li>
+                  </ul>
+
 
                   <button class="product-btn btn-secondary p-2" type="button" id="subscribeButton2">
                     Subscribe here
@@ -210,10 +225,10 @@
               feedbackButton.addEventListener("click", function () {
                 popupForm.style.display = "block";
               });
-
               closeButton.addEventListener("click", function () {
                 popupForm.style.display = "none";
               });
+
 
               // Optional: Handle form submission here (e.g., send feedback data to server)
               const feedbackFormInner = document.getElementById("feedbackFormInner");
@@ -221,6 +236,9 @@
                 // Your form submission logic here
                 alert("Thank you for your feedback!");
                 event.preventDefault(); // Prevent default form submission behavior
+                setTimeout(() => {
+                  feedbackFormInner.style.display = 'none'; // Hide the message after a delay (optional)
+                }, 1000); // Adjust delay (in milliseconds) as needed
               });
 
             </script>
