@@ -30,15 +30,15 @@
                   </div>
 
                   <div class="carousel-item" data-bs-interval="3000">
+                    <img src="./images/home/seoulful-banner1.png" alt="" class="d-block banner w-100 rounded-4">
+                  </div>
+
+                  <div class="carousel-item" data-bs-interval="3000">
                     <img src="./images/home/seoulful-banner2.jpg" alt="" class="d-block banner w-100 rounded-4">
                   </div>
 
                   <div class="carousel-item" data-bs-interval="3000">
-                    <img src="./images/home/seoulful-banner3.jpg" alt="" class="d-block banner w-100 rounded-4">
-                  </div>
-
-                  <div class="carousel-item" data-bs-interval="3000">
-                    <img src="./images/home/seoulful-banner4.jpg" alt="" class="d-block banner w-100 rounded-4">
+                    <img src="./images/home/seuoulful-banner3.png" alt="" class="d-block banner w-100 rounded-4">
                   </div>
             </div>
 
@@ -98,15 +98,19 @@
       <div id="carouselExampleAutoplaying2" class="carousel slide carousel-fade py-3" data-bs-ride="carousel">
         <div class="carousel-inner rounded-4">
           <div class="carousel-item active" data-bs-interval="3000">
-            <img src="images/home/closerLook-1.png" alt="" class="d-block banner w-100 rounded-4">
+            <img src="images/home/closerLook-4.png" alt="" class="d-block banner w-100 rounded-4">
+          </div>
+      
+          <div class="carousel-item" data-bs-interval="3000">
+            <img src="images/home/closerLook-3.png" alt="" class="d-block banner w-100 rounded-4">
           </div>
       
           <div class="carousel-item" data-bs-interval="3000">
             <img src="images/home/closerLook-2.png" alt="" class="d-block banner w-100 rounded-4">
           </div>
-      
+
           <div class="carousel-item" data-bs-interval="3000">
-            <img src="images/home/closerLook-3.png" alt="" class="d-block banner w-100 rounded-4">
+            <img src="images/home/closerLook-1.png" alt="" class="d-block banner w-100 rounded-4">
           </div>
         </div>
       
@@ -127,15 +131,23 @@
             <div id="carouselExampleAutoplaying3" class="carousel slide my-5" data-bs-ride="carousel">
               <div class="carousel-inner rounded-4">
                 <div class="carousel-item active" data-bs-interval="3000">
-                  <img src="images/home/closerLook-1.png" alt="" class="d-block small-banner w-100 rounded-4">
+                  <img src="images/home/snack-1.png" alt="" class="d-block small-banner w-100 rounded-4">
                 </div>
             
                 <div class="carousel-item" data-bs-interval="3000">
-                  <img src="images/home/closerLook-2.png" alt="" class="d-block small-banner w-100 rounded-4">
+                  <img src="images/home/snack-2.png" alt="" class="d-block small-banner w-100 rounded-4">
                 </div>
             
                 <div class="carousel-item" data-bs-interval="3000">
-                  <img src="images/home/closerLook-3.png" alt="" class="d-block small-banner w-100 rounded-4">
+                  <img src="images/home/snack-3.png" alt="" class="d-block small-banner w-100 rounded-4">
+                </div>
+
+                <div class="carousel-item" data-bs-interval="3000">
+                  <img src="images/home/snack-4.png" alt="" class="d-block small-banner w-100 rounded-4">
+                </div>
+
+                <div class="carousel-item" data-bs-interval="3000">
+                  <img src="images/home/snack-5.png" alt="" class="d-block small-banner w-100 rounded-4">
                 </div>
               </div>
             
@@ -155,15 +167,23 @@
             <div id="carouselExampleAutoplaying4" class="carousel slide my-5" data-bs-ride="carousel">
         <div class="carousel-inner rounded-4">
           <div class="carousel-item active" data-bs-interval="3000">
-            <img src="images/home/closerLook-1.png" alt="" class="d-block small-banner w-100 rounded-4">
+            <img src="images/home/snack-6.png" alt="" class="d-block small-banner w-100 rounded-4">
           </div>
       
           <div class="carousel-item" data-bs-interval="3000">
-            <img src="images/home/closerLook-2.png" alt="" class="d-block small-banner w-100 rounded-4">
+            <img src="images/home/snack-7.png" alt="" class="d-block small-banner w-100 rounded-4">
           </div>
       
           <div class="carousel-item" data-bs-interval="3000">
-            <img src="images/home/closerLook-3.png" alt="" class="d-block small-banner w-100 rounded-4">
+            <img src="images/home/snack-8.png" alt="" class="d-block small-banner w-100 rounded-4">
+          </div>
+
+          <div class="carousel-item" data-bs-interval="3000">
+            <img src="images/home/snack-9.png" alt="" class="d-block small-banner w-100 rounded-4">
+          </div>
+
+          <div class="carousel-item" data-bs-interval="3000">
+            <img src="images/home/snack-10.png" alt="" class="d-block small-banner w-100 rounded-4">
           </div>
         </div>
       
@@ -185,32 +205,42 @@
     <section id="contactsection">
       <h1 class="contact text-center">Contact Us</h1>
       <div class="contactcontainer">
-        <form>
-          <div class="text">
+        <form novalidate>
             <label>Name:</label>
-            <input type="text" placeholder="e.g. Don Carlo">
+            <input id="text" placeholder="e.g. Don Carlo">
           
             <label>Email:</label>
-            <input type="email" placeholder="name@example.com">
-
+            <input id="email" placeholder="name@example.com">
           
             <label>Enquiry:</label>
             <textarea rows="4"></textarea>
-          </div>
-          <div>
-            <button type="submit">Submit</button>
+            <button onclick="isEmail()" type="submit">Submit</button>
             <button type="reset">Reset</button>
-          </div>
         </form>
       </div>
     </section>
- 
 
-      <footer-component></footer-component>
+    <footer-component></footer-component>
 
-      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
-        </script>
+    <script>
+      function isEmail() {
+        var mail = document.getElementById("email").value;
+        var emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+
+        if (emailRegex.text(mail)) {
+          alert("Valid");
+          return true;
+        }
+        else {
+          alert("Error");
+          return false;
+        }
+      }
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
+    </script>
 </body>
 
 </html>

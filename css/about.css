@@ -1,14 +1,34 @@
 .card{
     border: 5px solid #e99b9b !important;
-    background-color: #f2c5c5;
-    border-top-right-radius: 8em !important;
-    border-top-left-radius: 8em !important;
+    border-top-right-radius: 1em !important;
+    border-top-left-radius: 1em !important;
     border-bottom-right-radius: 1em !important;
     border-bottom-left-radius: 1em !important;
 
   }
 
-.card img{
+.prof{
     padding: 2em;
-    border-radius: 8em !important;
+    border-radius: 12em !important;
 }
+
+.socialogo{
+  width: 5dvh;
+  cursor: pointer;
+}
+
+.linkedin{
+  width: 8.5dvh;
+  margin: auto;
+  cursor: pointer;
+
+}
+
+.prof-francis{
+  width: 96%;
+  margin: auto;
+  padding: 2em;
+  border-radius: 12em !important;
+
+}
+

@@ -56,6 +56,8 @@ h2 {
   padding: 5%;
   border-radius: 20px;
   border: 10px solid #e99b9b;
+  background-color: #f2c5c5;
+
 }
 
 label {
@@ -64,7 +66,7 @@ label {
   font-weight: 900; 
 }
 
-input[type=text], input[type=email], textarea {
+input[id=text], input[id=email], textarea {
   padding: 10px 20px;
   margin-bottom: 20px;
   width: 100%;
@@ -73,16 +75,16 @@ input[type=text], input[type=email], textarea {
   border: 3px solid #e99b9b;
   border-radius: 10px;
   cursor: pointer;
-  text-decoration: none;
 }
 
 button[type="submit"] {
   margin-right: 0.5em;
   padding: 10px 20px;
-  background: #f2c5c5;
+  background: #ffffff;
   color: #e07171;
-  font-weight: 800;
-  border: 3px solid #e99b9b;
+  font-weight: 1000;
+  font-size: 1.5em;
+  border: 3px solid #e07171;
   border-radius: 10px;
   cursor: pointer;
 }
@@ -90,11 +92,11 @@ button[type="submit"] {
 
 button[type="reset"] {
   padding: 10px 20px;
-  background: #f2c5c5;
+  background: #ffffff;
   color: #e07171;
-  font-weight: 800;
-  border: 3px solid #e99b9b;
-
+  font-weight: 1000;
+  font-size: 1.5em;
+  border: 3px solid #e07171;
   border-radius: 10px;
   cursor: pointer;
 }
