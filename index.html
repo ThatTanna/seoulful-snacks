@@ -202,41 +202,31 @@
         </div>
       </div>
 
-    <section id="contactsection">
-      <h1 class="contact text-center">Contact Us</h1>
+      <h1 class="contact-title text-center">Contact Us</h1>
       <div class="contactcontainer">
-        <form novalidate>
-            <label>Name:</label>
-            <input id="text" placeholder="e.g. Don Carlo">
+        <form name="loginForm" onsubmit="return submitForm();" class="needs-validation input-group-lg" novalidate>
+          <label>Name:</label>
+            <input id="name" placeholder="e.g. Don Carlo">
           
             <label>Email:</label>
-            <input id="email" placeholder="name@example.com">
-          
+            <input type="email" class="form-control" id="txtEmail" name="txtEmaiil" placeholder="name@example.com" pattern="[^@\s]+@[^@\s]+\.[^@\s]+" required>
+            <div class="invalid-feedback">
+              Email is required
+            </div>
+
             <label>Enquiry:</label>
             <textarea rows="4"></textarea>
-            <button onclick="isEmail()" type="submit">Submit</button>
-            <button type="reset">Reset</button>
+
+            <label></label>
+            
+            <button onclick="isEmail()" class="btn" type="submit">Submit</button>
+            <button class="btn" type="reset">Reset</button>
         </form>
       </div>
-    </section>
+
+    <script src="components/validation.js" type="text/javascript" defer></script>
 
     <footer-component></footer-component>
-
-    <script>
-      function isEmail() {
-        var mail = document.getElementById("email").value;
-        var emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
-
-        if (emailRegex.text(mail)) {
-          alert("Valid");
-          return true;
-        }
-        else {
-          alert("Error");
-          return false;
-        }
-      }
-    </script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
