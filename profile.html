@@ -17,15 +17,72 @@
     <!-- Header Component -->
     <script src="components/header.js" type="text/javascript" defer></script>
     <script src="components/footer.js" type="text/javascript" defer></script>
+    <script src="components/profile.js" type="text/javascript" defer></script>
 </head>
 
 <body>
+    <script>
+        async function updateProfile({ email, name, billingAddress, api }) {
+            const request = {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                    'Authorization': `Bearer ${localStorage.getItem("token")}`
+                },
+                body: JSON.stringify({
+                    email: email,
+                    name: name,
+                    billingAddress: billingAddress
+                })
+            };
+
+            // send email and password to server
+            const response = await fetch(api, request);
+            const status = response.status;
+            const data = await response.json();
+
+            // Return the result only if the status is 200 (OK), else return false
+            return status === 200 ? data : false;
+
+        }
+
+        async function submitForm() {
+
+            // Get toast element
+            const toastElement = document.getElementById("msg-toast");
+            const toastBodyElement = document.getElementById("msg-toast-body");
+
+            event.preventDefault();
+            const name = document.getElementById("name").value;
+            const email = document.getElementById("email").value;
+            const billingAddress = document.getElementById("billingAddress").value;
+
+            // Send the information from the form here to authenticate
+            const api = "http://localhost:8080/profile/api/update";
+            const result = await updateProfile({ email: email, name: name, billingAddress: billingAddress, api });
+
+            // If the result is false, display an error message and return
+            if (!result) {
+                showToast({ toastElement, toastBodyElement, bgColor: "danger", msg: "Error in updating profile. Please try again." });
+                return;
+            } else {
+                showToast({ toastElement, toastBodyElement, bgColor: "success", msg: "Profile updated!" });
+            }
+
+            // Redirect the user
+            // var url = "/profile.html";
+            // window.location = url;
+
+            return;
+
+        }
+    </script>
     <header-component></header-component>
     <main class="m-3">
         <h1>Account</h1>
         <span>
             <i class="bi bi-person"></i>
-            <a class="text-secondary" href="#">Log out</a>
+            <a class="text-secondary" href="logout.html">Log out</a>
         </span>
 
         <div class="my-5">
@@ -126,30 +183,23 @@
             <h2>Account Details</h2>
             <div class="container">
                 <h4 class="mb-3">Billing Address</h4>
-                <p>Please ensure your details below are correct, these will be used as the default mailing address for new subscriptions</p>
+                <p>Please ensure your details below are correct, these will be used as the default mailing address for
+                    new subscriptions</p>
                 <!-- TODO: Show values from backend for this account in value field -->
-                <form class="needs-validation" novalidate>
+                <form class="needs-validation" onsubmit="return submitForm();" novalidate>
                     <div class="row">
                         <div class="col-md-6 mb-3">
-                            <label for="firstName">First name</label>
-                            <input type="text" class="form-control" id="firstName" placeholder="" value="Kim" required>
+                            <label for="name">Name</label>
+                            <input type="text" class="form-control" id="name" placeholder="" value="" required>
                             <div class="invalid-feedback">
-                                Valid first name is required.
-                            </div>
-                        </div>
-                        <div class="col-md-6 mb-3">
-                            <label for="lastName">Last name</label>
-                            <input type="text" class="form-control" id="lastName" placeholder="" value="Ji-Yoon"
-                                required>
-                            <div class="invalid-feedback">
-                                Valid last name is required.
+                                Valid name is required.
                             </div>
                         </div>
                     </div>
 
                     <div class="mb-3">
-                        <label for="email">Email</label><span class="text-muted"> (required)</span></label>
-                        <input type="email" class="form-control" id="email" pattern="[^@\s]+@[^@\s]+\.[^@\s]+" required>
+                        <label for="email">Email</label><span class="text-muted"> (Please contact our customer service if you need to update your email)</span></label>
+                        <input type="email" class="form-control" id="email" pattern="[^@\s]+@[^@\s]+\.[^@\s]+" disabled required>
                         <!-- Email pattern from https://stackoverflow.com/a/36379040 -->
                         <div class="invalid-feedback">
                             Please enter a valid email address for billing updates.
@@ -157,16 +207,16 @@
                     </div>
 
                     <div class="mb-3">
-                        <label for="address">Billing Address</label><span class="text-muted"> (within Singapore only)</span>
-                        <input type="text" class="form-control" id="address"
-                            value="23 Blossom Lane, Springvale Heights, Azure Grove" required>
+                        <label for="address">Billing Address</label><span class="text-muted"> (within Singapore
+                            only)</span>
+                        <input type="text" class="form-control" id="billingAddress" value="" required>
                         <div class="invalid-feedback">
                             Please enter your billing address.
                         </div>
                     </div>
-                    <hr class="mb-4">
 
-                    <!-- <h4 class="mb-3">Payment Information</h4>
+                    <!-- <hr class="mb-4">
+                    <h4 class="mb-3">Payment Information</h4>
                     <div class="row">
                         <div class="col-md-6 mb-3">
                             <label for="cc-name">Name on card</label>
@@ -199,8 +249,8 @@
                                 Security code required
                             </div>
                         </div>
-                    </div> -->
-                    <hr class="mb-4">
+                    </div>
+                    <hr class="mb-4"> -->
                     <button class="btn btn-dark btn-lg btn-block" type="submit">Update account details</button>
                 </form>
             </div>
@@ -212,6 +262,21 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+
+            const toastElement = document.getElementById("msg-toast");
+            const toastBodyElement = document.getElementById("msg-toast-body");
+
+            let params = new URLSearchParams(window.location.search);
+            let getCheckoutStatus = params.get("checkedout");
+            if (getCheckoutStatus) {
+                showToast({ toastElement, toastBodyElement, bgColor: "success", msg: "Checkout completed. Thank you." });
+            }
+        })
+    </script>
+
 </body>
 
 </html>

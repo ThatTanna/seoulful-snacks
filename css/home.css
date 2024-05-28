@@ -40,49 +40,65 @@ h2 {
   padding-top: 0.5em;
 }
 
-.contact{
-  margin-top: 4rem;
+.contact-title{
+  margin-top: 4em;
   color: #000000;
 }
 
-#contactsection {
-  width: 80%;
-  margin:auto;
-}
-
 .contactcontainer {
-  display: flex;
-  flex-direction: column;
-  padding: 5%;
+  width: 50%;
+  padding: 2em;
+  margin: auto;
   border-radius: 20px;
-  border: 10px solid #e99b9b;
+  border: 5px solid #e99b9b;
+  background-color: #ffffff;
 }
 
 label {
+  padding-top: 2em;
   display: block;
   color: #000000;
   font-weight: 900; 
 }
 
-input[type=text], input[type=email], textarea {
-  padding: 10px 20px;
-  margin-bottom: 20px;
+input[id=name] {
+  padding: 0.5em;
   width: 100%;
-  font-size: medium;
-  color: #e07171;
   border: 3px solid #e99b9b;
   border-radius: 10px;
   cursor: pointer;
-  text-decoration: none;
 }
+
+input[id=txtEmail] {
+  width: 100%;
+  border: 3px solid #e99b9b;
+  border-radius: 10px;
+  font-size: 1em !important;
+  cursor: pointer;
+}
+
+textarea {
+  padding: 10px 20px;
+  width: 100%;
+  border: 3px solid #e99b9b;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+input::placeholder {
+  color: #999 !important;
+}
+
+
+
 
 button[type="submit"] {
   margin-right: 0.5em;
   padding: 10px 20px;
-  background: #f2c5c5;
+  background: #ffffff;
   color: #e07171;
-  font-weight: 800;
-  border: 3px solid #e99b9b;
+  font-weight: 500;
+  border: 3px solid #e07171;
   border-radius: 10px;
   cursor: pointer;
 }
@@ -90,11 +106,10 @@ button[type="submit"] {
 
 button[type="reset"] {
   padding: 10px 20px;
-  background: #f2c5c5;
+  background: #ffffff;
   color: #e07171;
-  font-weight: 800;
-  border: 3px solid #e99b9b;
-
+  font-weight: 500;
+  border: 3px solid #e07171;
   border-radius: 10px;
   cursor: pointer;
 }

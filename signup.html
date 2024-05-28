@@ -16,41 +16,58 @@
     <!-- Header Component -->
     <script src="components/header.js" type="text/javascript" defer></script>
     <script src="components/footer.js" type="text/javascript" defer></script>
+    <script src="components/signup.js" type="text/javascript" defer></script>
+    <script src="components/validation.js" type="text/javascript" defer></script>
 </head>
 
 <body>
+    <script>
+        async function submitForm() {
+            // Get toast element
+            const toastElement = document.getElementById("msg-toast");
+            const toastBodyElement = document.getElementById("msg-toast-body");
+
+            event.preventDefault();
+            const email = document.getElementById("txtEmail");
+            const password = document.getElementById("txtPassword");
+
+            // Send the information from the form here to authenticate
+            const api = "http://localhost:8080/auth/api/signup";
+            const result = await signUp({ email: email.value, password: password.value, api: api });
+            const data = await result.json();
+
+            // If the result is not 201 CREATED
+            if (result.status!=201) {
+                showToast({ toastElement, toastBodyElement, bgColor: "danger", msg: data.error });
+                return;
+            }
+
+            // Store the token and refresh token in local storage and display a success message
+            // const access = result.token;
+            // const refresh = result.refreshToken;
+            // window.localStorage.setItem("token", access);
+            // window.localStorage.setItem("refreshToken", refresh);
+
+            showToast({ toastElement, toastBodyElement, bgColor: "success", msg: "Signup successful, please login..." });
+            
+            // Wait for 2 seconds
+            const sleep = (delay) => new Promise((resolve) => setTimeout(resolve, delay))
+            await sleep(2000)
+
+            // Redirect the user
+            var url = "/login.html";
+            window.location = url;
+
+            return;
+
+        }
+    </script>
     <header-component></header-component>
     <main class="m-3">
         <h1 class="text-center mb-4">Create account</h1>
         <section class="container w-50">
-            <form name="registerForm" class="needs-validation" novalidate>
+            <form name="registerForm" onsubmit="return submitForm();" class="needs-validation" novalidate>
                 <div class="row">
-                    <!-- First Name -->
-                    <div class="col-12 input-group my-3">
-                        <!-- <label for="txtFirstName" class="form-label">First name</label> -->
-                        <input type="text" class="form-control" id="txtFirstName" name="txtFirstName"
-                            placeholder="First name" required>
-                        <div class="invalid-feedback">
-                            First name is required
-                        </div>
-                        <div class="valid-feedback">
-                            Looks good!
-                        </div>
-                    </div>
-
-                    <!-- Last Name -->
-                    <div class="col-12 input-group mb-3">
-                        <!-- <label for="txtLastName" class="form-label">Last name</label> -->
-                        <input type="text" class="form-control" id="txtLastName" name="txtLastName"
-                            placeholder="Last name" required>
-                        <div class="invalid-feedback">
-                            Last name is required
-                        </div>
-                        <div class="valid-feedback">
-                            Looks good!
-                        </div>
-                    </div>
-
                     <!-- Email -->
                     <div class="col-12 input-group mb-3">
                         <!-- <label for="txtEmail" class="form-label">Email</label> -->
@@ -85,27 +102,6 @@
             </form>
         </section>
     </main>
-    <script>
-        // JavaScript for disabling form submissions if there are invalid fields
-        (() => {
-        'use strict'
-
-        // Fetch all the forms we want to apply custom Bootstrap validation styles to
-        const forms = document.querySelectorAll('.needs-validation')
-
-        // Loop over them and prevent submission
-        Array.from(forms).forEach(form => {
-            form.addEventListener('submit', event => {
-            if (!form.checkValidity()) {
-                event.preventDefault()
-                event.stopPropagation()
-            }
-
-            form.classList.add('was-validated')
-            }, false)
-        })
-        })()
-    </script>
     <footer-component></footer-component>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
