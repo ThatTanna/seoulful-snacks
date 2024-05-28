@@ -7,6 +7,7 @@
   object-fit: cover;
   /* Cover the entire image area while maintaining aspect ratio */
   border: solid lightgrey 1px;
+  border-radius: 15px;
 }
 
 .snack-infor {
@@ -17,13 +18,6 @@
 .snack-infor li {
   list-style-type: none;
 }
-
-/* h1 {
-  font-family: "Josefin Sans";
-  font-size: 3rem;
-  font-weight: 900;
-  color: #e99b9b;
-} */
 
 /* Add a background color to the product details section */
 .product-details {
@@ -39,9 +33,9 @@
 
 }
 
-.container {
+/* .container {
   border: solid, 10px red;
-}
+} */
 
 .review {
   border: 1px solid #ddd;
@@ -103,71 +97,3 @@
   text-align: center;
   /* Center the text content */
 }
-<<<<<<< HEAD
-=======
-
-#popupForm {
-  display: none;
-  /* Hide the popup form initially */
-  position: fixed;
-  /* Keep the popup in place */
-  left: 25%;
-  top: 0;
-  /* border: solid black; */
-  width: 50%;
-  height: 80%;
-  background-color: #ffffff;
-  text-align: center;
-}
-
-#popupForm form {
-  background-color: #ffffff;
-  padding: 10px;
-  /* border: solid black; */
-  border-radius: 5px;
-  margin-top: 100px;
-  /* Center the form vertically */
-}
-
-#closeButton {
-  margin-top: 10px;
-  background-color: #e99b9b;
-  border: solid black;
-  padding: 10px 20px;
-  border-radius: 12px;
-  cursor: pointer;
-}
-
-#closeButton:hover {
-  background-color: #e07171;
-  color: #ffffff;
-}
-
-.sendButton {
-  margin-top: 10px;
-  background-color: #e99b9b;
-  border: solid black;
-  padding: 10px 20px;
-  border-radius: 12px;
-  cursor: pointer;
-}
-
-.sendButton:hover {
-  background-color: #e07171;
-  color: #ffffff;
-}
-
-#feedbackButton {
-  margin-top: 10px;
-  background-color: #e99b9b;
-  border: solid black;
-  padding: 10px 20px;
-  border-radius: 12px;
-  cursor: pointer;
-}
-
-#feedbackButton:hover {
-  background-color: #e07171;
-  color: #ffffff;
-}
->>>>>>> main
