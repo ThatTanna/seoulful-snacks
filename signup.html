@@ -43,19 +43,19 @@
             }
 
             // Store the token and refresh token in local storage and display a success message
-            const access = result.token;
-            const refresh = result.refreshToken;
-            window.localStorage.setItem("token", access);
-            window.localStorage.setItem("refreshToken", refresh);
+            // const access = result.token;
+            // const refresh = result.refreshToken;
+            // window.localStorage.setItem("token", access);
+            // window.localStorage.setItem("refreshToken", refresh);
 
-            showToast({ toastElement, toastBodyElement, bgColor: "success", msg: "Signup successful, please wait..." });
+            showToast({ toastElement, toastBodyElement, bgColor: "success", msg: "Signup successful, please login..." });
             
             // Wait for 2 seconds
             const sleep = (delay) => new Promise((resolve) => setTimeout(resolve, delay))
             await sleep(2000)
 
             // Redirect the user
-            var url = "/profile.html";
+            var url = "/login.html";
             window.location = url;
 
             return;
