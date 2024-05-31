@@ -54,12 +54,12 @@
 <script>
 
     // TODO: get the athenication token (DONE)
-    const authenticated = auth();
+    // no authentication need for products page
 
     // TODO: display the products results (DONE)
     const productResult = async ()=>{
 
-        const productItems =await getProducts(authenticated);
+        const productItems =await getProducts();
         const productCardsContainer = document.getElementById("product-cards-container");
 
         productItems.forEach(item => {

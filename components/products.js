@@ -5,13 +5,13 @@ function subScribe(package){
 
 
 // TODO: get the product items (DONE)
-async function getProducts(authenticated){
+async function getProducts(){
     
     // Fetch data for the user's listings
     const request = {
         method: "GET",
         headers: {
-            "Authorization": `Bearer ${authenticated}`,
+            // "Authorization": `Bearer ${authenticated}`,
             "Content-Type": "application/json"
         }
     };
