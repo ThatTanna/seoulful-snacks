@@ -25,9 +25,9 @@
     <!-- Form Container -->
     <div class="container-lg">
         <div class="admin-title my-2">
-            <h1>Hello Admin,</h1>
+            <h1>Add Product</h1>
         </div>
-        <div class="productinputs">
+        <div class="productinputs p-5">
             <form>
                 <div class="addproduct">
                     <label>Product Name:</label>
@@ -44,6 +44,10 @@
                     <button type="reset" class="btn">Reset</button>
                 </div>
             </form>
+        </div>
+
+        <div class="admin-title my-2">
+            <h1>Our Products</h1>
         </div>
 
         <!-- Product Container -->
@@ -75,29 +79,27 @@
                                 <div class="modal-dialog">
                                     <div class="modal-content">
                                         <div class="modal-header">
-                                            <h1 class="modal-title fs-5" id="exampleModalLabel">New message to @fat</h1>
+                                            <h1 class="modal-title fs-5" id="exampleModalLabel">Edit</h1>
                                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                         </div>
                                         <div class="modal-body">
                                             <form>
-                                                <div class="mb-3">
-                                                    <label for="recipient-name" class="col-form-label">Product Name:</label>
-                                                    <input type="text" class="form-control" id="recipient-name">
+                                                <label>Product Name:</label>
+                                                <input type="text" placeholder="Seoulful Package XX"> <br>
+                                                <label>Description:</label>
+                                                <textarea rows="6">  </textarea> <br>
+                                                <label>Price:</label>
+                                                <input type="text" placeholder="$$"> <br>
+                                                <div class="form-group">
+                                                    <label for="photoInput">Upload Photo Here:</label>
+                                                    <input type="file" class="form-control-file" id="photoInput" name="photo">
                                                 </div>
-                                                <div class="mb-3">
-                                                    <label for="message-text" class="col-form-label">Description:</label>
-                                                    <textarea class="form-control" id="description-text"></textarea>
-                                                </div>
-                                                <div class="mb-3">
-                                                    <label for="message-text" class="col-form-label">Price:</label>
-                                                    <input type="text" class="form-control" id="price">
-                                                </div>
-                                                
                                             </form>
                                         </div>
                                         <div class="modal-footer">
+                                            <button type="button" class="btn btn-primary">Done</button>
                                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                            <button type="button" class="btn btn-primary">Send message</button>
+
                                         </div>
                                     </div>
                                 </div>
@@ -125,8 +127,40 @@
                     </div>
                     <div class="col-md-1">
                         <div class="buttons">
-                            <button type="edit" class="btn">Edit</button><br>
-                            <button type="delete" class="btn">Delete</button>
+                            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal"
+                                data-bs-whatever="@getbootstrap">Edit</button>
+                            
+                            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true"
+                                style="display: none;">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h1 class="modal-title fs-5" id="exampleModalLabel">Edit</h1>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <form>
+                                                <label>Product Name:</label>
+                                                <input type="text" placeholder="Seoulful Package XX"> <br>
+                                                <label>Description:</label>
+                                                <textarea rows="6">  </textarea> <br>
+                                                <label>Price:</label>
+                                                <input type="text" placeholder="$$"> <br>
+                                                <div class="form-group">
+                                                    <label for="photoInput">Upload Photo Here:</label>
+                                                    <input type="file" class="form-control-file" id="photoInput" name="photo">
+                                                </div>
+                                            </form>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-primary">Done</button>
+                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <br> <button type="delete" class="btn">Delete</button>
                         </div>
                     </div>
                 </div>
@@ -152,8 +186,40 @@
                     </div>
                     <div class="col-md-1">
                         <div class="buttons">
-                            <button type="edit" class="btn">Edit</button><br>
-                            <button type="delete" class="btn">Delete</button>
+                            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal"
+                                data-bs-whatever="@getbootstrap">Edit</button>
+                            
+                            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true"
+                                style="display: none;">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h1 class="modal-title fs-5" id="exampleModalLabel">Edit</h1>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <form>
+                                                <label>Product Name:</label>
+                                                <input type="text" placeholder="Seoulful Package XX"> <br>
+                                                <label>Description:</label>
+                                                <textarea rows="6">  </textarea> <br>
+                                                <label>Price:</label>
+                                                <input type="text" placeholder="$$"> <br>
+                                                <div class="form-group">
+                                                    <label for="photoInput">Upload Photo Here:</label>
+                                                    <input type="file" class="form-control-file" id="photoInput" name="photo">
+                                                </div>
+                                            </form>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-primary">Done</button>
+                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <br> <button type="delete" class="btn">Delete</button>
                         </div>
                     </div>
                 </div>
