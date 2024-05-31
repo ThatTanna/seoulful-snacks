@@ -51,9 +51,26 @@
 
 
             // Wait for 1 seconds
-            const sleep = (delay) => new Promise((resolve) => setTimeout(resolve, delay))
-            await sleep(1000)
+            const sleep = (delay) => new Promise((resolve) => setTimeout(resolve, delay));
+            await sleep(1000);
 
+            // TODO: redirect the user if a package is selected (DONE)
+            // TODO: to cart.html with the package (DONE)
+            var url = window.location.origin;
+            var urlParams = new URLSearchParams(window.location.search);
+            let package = urlParams.get("package");
+            
+            if(package) {
+                // TODO: If there is a url param called package (DONE)
+                // and if package is not null/false, go to cart.html
+                // with the package and its value
+                url = url.substring(0, url.indexOf("?"));
+                url += "/cart.html";
+                url += `?package=${package}`;
+                window.location.replace(url);
+                return;
+            } 
+    
             // Redirect the user
             var url = "/profile.html";
             window.location = url;
