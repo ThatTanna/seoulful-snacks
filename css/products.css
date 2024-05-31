@@ -7,6 +7,7 @@
   object-fit: cover;
   /* Cover the entire image area while maintaining aspect ratio */
   border: solid lightgrey 1px;
+  border-radius: 15px;
 }
 
 .snack-infor {
@@ -17,13 +18,6 @@
 .snack-infor li {
   list-style-type: none;
 }
-
-/* h1 {
-  font-family: "Josefin Sans";
-  font-size: 3rem;
-  font-weight: 900;
-  color: #e99b9b;
-} */
 
 /* Add a background color to the product details section */
 .product-details {
@@ -39,9 +33,9 @@
 
 }
 
-.container {
+/* .container {
   border: solid, 10px red;
-}
+} */
 
 .review {
   border: 1px solid #ddd;
