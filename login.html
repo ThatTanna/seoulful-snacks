@@ -56,6 +56,10 @@
 
             // Redirect the user
             var url = "/profile.html";
+            // If Admin, redirect to profile listing page
+            if (result.role === "ADMIN") {
+                url = "/profile-listing-admin.html"
+            }
             window.location = url;
 
             return;
