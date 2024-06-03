@@ -18,6 +18,8 @@
     <script src="components/header.js" type="text/javascript" defer></script>
     <script src="components/footer.js" type="text/javascript" defer></script>
     <script src="components/profile.js" type="text/javascript" defer></script>
+    <!-- jQuery -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
 </head>
 
 <body>
@@ -87,18 +89,18 @@
 
         <div class="my-5">
             <h2>Active Subscriptions</h2>
-            <!-- TODO: Use returned values from backend to determine if there's any existing subscription -->
+            <!-- Commented as javascript will use returned values from backend to determine if there's any existing subscription -->
+            <!-- Content below are left for template, in case need to change anything -->
             <!-- If there's existing subscriptions -->
-            <div class="m-4 bg-light d-flex justify-content-center">
-                <div class="container m-3">
-                    <div class="row">
+            <div id="subscription-exists"  class="m-4 bg-light justify-content-center">
+                <!-- <div class="container m-3">
+                    <div class="row"> -->
                         <!-- Loop one of this -->
-                        <div class="col-md-12">
+                        <!-- <div class="col-md-12">
                             <span class="text-secondary ms-3">Expiry: 22 March 2025</span><br />
                             <div class="border rounded-3 p-2 mb-4 d-flex align-items-center justify-content-between">
                                 <div class="d-flex align-items-center">
-                                    <img class="border rounded me-2" width="100px"
-                                        src="images/cart/korean-snack-box.webp">
+                                    <img class="border rounded me-2" width="100px" src="images/cart/korean-snack-box.webp">
                                     <div class="">Subscription 1: <span class="fw-bold">Petite K-Treat Taster</span>
                                     </div>
                                 </div>
@@ -140,7 +142,7 @@
                                     <button type="button" class="btn btn-outline-danger m-2">Cancel</button>
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
                         <!-- Example of a card subscription -->
                         <!-- <div class="col-md-4">
                             <div class="card mb-4 box-shadow">
@@ -162,14 +164,14 @@
                             </div>
                         </div> -->
                         <!-- End of card subscription -->
-                    </div>
-                </div>
+                    <!-- </div>
+                </div> -->
             </div>
         </div>
 
 
         <!-- If no subscription -->
-        <div class="m-4 bg-light d-flex justify-content-center" style="height:150px">
+        <div id="subscription-none" class="m-4 bg-light justify-content-center" style="height:150px" display="">
             <div class="row align-items-center">
                 <div>
                     <h5>You don't have any active subscription.</h5>
