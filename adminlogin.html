@@ -14,13 +14,20 @@
         href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&family=Outfit:wght@100..900&family=Overpass:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap"
         rel="stylesheet">
     <!-- Header Component -->
-    <script src="components/header.js" type="text/javascript" defer></script>
+    <script src="components/adminauth.js"></script>
+    <script src="components/adminheader.js" type="text/javascript" defer></script>
     <script src="components/footer.js" type="text/javascript" defer></script>
     <script src="components/login.js" type="text/javascript" defer></script>
 </head>
 
 <body>
     <script>
+        // TODO: clear the token first (DONE)
+        // Admin Login does not show the menu till it is logged in
+        (()=>{
+            clearToken();
+        })();
+        
         async function submitForm() {
 
             // Get toast element
@@ -53,30 +60,9 @@
             // Wait for 1 seconds
             const sleep = (delay) => new Promise((resolve) => setTimeout(resolve, delay));
             await sleep(1000);
-
-            // TODO: redirect the user if a package is selected (DONE)
-            // TODO: to cart.html with the package (DONE)
-            var url = window.location.origin;
-            var urlParams = new URLSearchParams(window.location.search);
-            let package = urlParams.get("package");
-            
-            if(package) {
-                // TODO: If there is a url param called package (DONE)
-                // and if package is not null/false, go to cart.html
-                // with the package and its value
-                url = url.substring(0, url.indexOf("?"));
-                url += "/cart.html";
-                url += `?package=${package}`;
-                window.location.replace(url);
-                return;
-            } 
     
             // Redirect the user
-            var url = "/profile.html";
-            // If Admin, redirect to profile listing page
-            if (result.role === "ADMIN") {
-                url = "/profile-listing-admin.html"
-            }
+            var url = "/adminpanel.html";
             window.location = url;
 
             return;
@@ -85,7 +71,7 @@
     </script>
     <header-component></header-component>
     <main class="m-3">
-        <h1 class="text-center mb-4">Login</h1>
+        <h1 class="text-center mb-4">Admin Login</h1>
         <section class="container w-50">
             <form name="loginForm" onsubmit="return submitForm();" class="needs-validation input-group-lg" novalidate>
                 <div class="row">

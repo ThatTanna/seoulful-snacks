@@ -16,3 +16,4 @@ Packages
 Petite K-Treat Taster (S)
 K-Treat Discovery Box (M)
 K-Treat Treasure Chest (L)
+You can dynamically add more packages

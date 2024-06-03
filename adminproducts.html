@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form id="uploadForm">
+        <label for="txtName">Name:</label>
+        <input type="text" id="txtName" name="txtName" required><br><br>
+        
+        <label for="txtDesc">Description:</label>
+        <input type="text" id="txtDesc" name="txtDesc" required><br><br>
+
+        <label for="txtPrice">Price:</label>
+        <input type="text" id="txtPrice" name="txtPrice" required><br><br>
+        
+        <label for="file">Upload JPEG:</label>
+        <input type="file" id="file" name="file" required><br><br>
+        
+        <button type="submit">Submit</button>
+    </form>
+    <script src="components/adminauth.js"></script>
+    <script src="components/adminproducts.js"></script>
+    <script>
+
+        // TODO: Only authenicated AMIN users can save product information (DONE)
+        (() => {
+            const authenitcated = adminauth();
+        })();
+
+        // TODO: eventListener to submit the product information
+        document.getElementById('uploadForm').addEventListener('submit', async(event) => {
+            
+            // Prevent default form submission
+            event.preventDefault(); 
+
+            const name = document.getElementById('txtName').value;
+            const description = document.getElementById('txtDesc').value;
+            const price = document.getElementById('txtPrice').value;
+            const file = document.getElementById('file').files[0];
+
+            // Create a JSON object for the product information
+            let data = {
+                name: name,
+                description: description,
+                price: price
+            };
+
+            // Send authentication and product information to saveProduct
+            const result = await saveProduct(authenticated, data, file)
+
+            alert(result);
+        });
+        
+    </script>
+</body>
+</html>
