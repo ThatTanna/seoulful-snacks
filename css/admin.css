@@ -1,0 +1,47 @@
+h1 {
+    font-size: 2em;
+}
+
+label {
+    display: block;
+    color: #000000;
+    font-weight: 900; 
+  }
+
+.productinputs {
+    width: 100%;
+    margin-bottom: 3em;
+    padding: 2em;
+    border-radius: 20px;
+    border: 5px solid #e99b9b;
+    background-color: #ffffff;
+}
+input[type=text], textarea {
+    padding: 0.5em;
+    width: 100%;
+    border: 3px solid #e99b9b;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.btn {
+    margin-right: 0.5em;
+    padding: 10px 20px;
+    background: #ffffff;
+    color: #e07171;
+    font-weight: 500;
+    border: 3px solid #e07171;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+
+  .card {
+    width:auto;
+    border: 5px solid #e99b9b;
+  }
+
+  .edit {
+    padding-left: 1.8em;
+    padding-right: 1.8em;
+
+  }
