@@ -39,3 +39,9 @@ input[type=text], textarea {
     width:auto;
     border: 5px solid #e99b9b;
   }
+
+  .edit {
+    padding-left: 1.8em;
+    padding-right: 1.8em;
+
+  }
