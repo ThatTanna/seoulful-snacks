@@ -250,7 +250,19 @@
                 // Send authentication and product information to saveProduct
                 const result = await saveProduct(authenticated, data, file)
 
-                alert(result);
+                // Check the success or failure of saving the object
+                const messageSuccessAdded = "Product added successfully.";
+                const messageFailedAdded = "Product could not be added.";
+                
+                if(result){
+                    alert(messageSuccessAdded);
+                    // TODO: Update the products section (refer to products.js)
+                }
+                else
+                    alert(messageFailedAdded);
+
+                document.getElementById("uploadForm").reset();
+                return;
             });
         </script>
     </div>
