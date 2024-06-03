@@ -3,7 +3,7 @@ async function saveProduct(authenticated, data={}, file=null){
     
     if(authenticated){
 
-        const queryString = new URLSearchParams(data).toString();
+        // const queryString = new URLSearchParams(data).toString();
         
         // Create a FormData object to send the data via fetch api
         let formData = new FormData();
@@ -32,5 +32,3 @@ async function saveProduct(authenticated, data={}, file=null){
     }
     return "product not saved";
 };
-
-JSON.stringify(data)
