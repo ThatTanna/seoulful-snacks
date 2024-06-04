@@ -30,58 +30,35 @@
                 <div class="mx-auto card mb-3" style="max-width: 640px;">
                     <div class="row g-0">
                         <div class="col-md-4">
-                            <img src="images/cart/korean-snack-box.webp"
+                            <!-- TODO: Cart Image Goes Here -->
+                            <img id="card-image" src="images/cart/korean-snack-box.webp"
                                 class="border border-5 border-danger-subtle rounded img-fluid rounded-start"
                                 alt="real-pizza-bagel-chip">
                         </div>
                         <div class="col-md-8">
                             <div class="card-body row">
-                                <h5 class="card-title col-md-10 p-2">Premium Snack Box</h5>
+                                
+                                <h5 id="card-title" class="card-title col-md-10 p-2"> 
+                                    <!-- TODO: Cart Title Goes Here -->
+                                </h5>
+
                                 <button type="button" class="btn bi bi-trash col-md-2"></button>
-                                <p class="card-text">Subscription Plan: 12 months (1-year)
-                                    <br> Monthly delivery, charged annually
+                                <p id="card-description" class="card-text">
+                                    <!-- TODO: Cart Desc Goes Here -->
                                 </p>
                                 <div class="row">
                                     <div class="btn-group col-md-5" role="group" aria-label="Basic example">
                                         <button type="button" class="border btn bi bi-dash-circle"></button>
-                                        <button type="button" class="border btn">3</button>
+                                        <button type="button" class="border btn">1</button>
                                         <button type="button" class="border btn bi bi-plus-circle"></button>
                                     </div>
-                                    <div class="col-md-7 m-auto">$1,800.00</div>
+                                    <div id="card-price" class="col-md-7 m-auto">
+                                        <!-- TODO: Cart Price Goes Here -->
+                                    </div>
                                 </div>
-                                <p class="card-text">
+                                <!-- <p class="card-text">
                                     <small class="text-body-secondary">Added to cart 3 mins ago</small>
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Dummy Card: Delete after adding logic -->
-                <div class="mx-auto card mb-3" style="max-width: 640px;">
-                    <div class="row g-0">
-                        <div class="col-md-4">
-                            <img src="images/cart/mystery-box.webp"
-                                class="border border-5 border-danger-subtle rounded img-fluid rounded-start"
-                                alt="real-pizza-bagel-chip">
-                        </div>
-                        <div class="col-md-8">
-                            <div class="card-body row">
-                                <h5 class="card-title col-md-10 p-2">Mystery Box</h5>
-                                <button type="button" class="btn bi bi-trash col-md-2"></button>
-                                <p class="card-text">Subscription Plan: 1 month
-                                    <br> Monthly delivery, charged monthly
-                                </p>
-                                <div class="row">
-                                    <div class="btn-group col-md-5" role="group" aria-label="Basic example">
-                                        <button type="button" class="border btn bi bi-dash-circle"></button>
-                                        <button type="button" class="border btn">6</button>
-                                        <button type="button" class="border btn bi bi-plus-circle"></button>
-                                    </div>
-                                    <div class="col-md-7 m-auto">$1,200.00</div>
-                                </div>
-                                <p class="card-text">
-                                    <small class="text-body-secondary">Added to cart 5 mins ago</small>
-                                </p>
+                                </p> -->
                             </div>
                         </div>
                     </div>
@@ -102,6 +79,44 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
+    <script src="components/auth.js"></script>
+    <script src="components/cart.js"></script>
+    <script>
+
+        // TODO: get the athenication token (DONE)
+        const authenticated = auth();
+
+        // TODO: display the cart results (DONE)
+        const cartResult = async ()=>{
+
+            var urlParams = new URLSearchParams(window.location.search);
+            let package = urlParams.get("package");
+
+            const cartItem =await getCart(authenticated, package);
+            
+            // Product Title
+            let cartTitle = cartItem.name;
+            cartTitle = cartTitle.charAt(0).toUpperCase() + cartTitle.slice(1);
+            document.getElementById("card-title").innerText = cartTitle;
+
+            // Product Description
+            let cartDesc = cartItem.description;
+            cartDesc = cartDesc.charAt(0).toUpperCase() + cartDesc.slice(1);
+            document.getElementById("card-description").innerText = cartDesc;
+
+            // Product Description
+            let cartPrice = cartItem.price;
+            cartPrice = parseInt(cartPrice).toFixed(2);
+            document.getElementById("card-price").innerText = `$${cartPrice}`;
+
+            // Product Image
+            let cartImage = cartItem.imagePath;
+            document.getElementById("card-image").setAttribute("style", "background-color:red;");
+            document.getElementById("card-image").setAttribute("src", "http://localhost:8080" + cartImage);
+
+        };
+        cartResult();
+    </script>
 </body>
 
 </html>
