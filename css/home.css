@@ -1,11 +1,11 @@
 .banner {
-  height: 50dvh;
+  height: 40dvh;
   object-fit: cover;
   border: 3px solid #e99b9b;
 }
 
 .small-banner{
-  height: 70dvh;
+  height: 40dvh;
   object-fit: cover;
   border: 3px #e99b9b solid;
 }
@@ -29,19 +29,20 @@ h2 {
   font-size: 2rem;
 }
 
+.items-title{
+  padding-top: 3em;
+}
+
 .card{
   border: 5px solid #e99b9b !important;
 }
 
-.carousel-caption {
-  color: #ffffff;
-  background-color: #e07171;
-  padding-bottom: 0em;
-  padding-top: 0.5em;
+.cards, .closer-look-carousel, .items-carousel {
+  width: 70%;
 }
 
 .contact-title{
-  margin-top: 4em;
+  margin-top: 2em;
   color: #000000;
 }
 
@@ -98,6 +99,8 @@ button[type="submit"] {
   background: #ffffff;
   color: #e07171;
   font-weight: 500;
+  font-size: 1em !important;
+
   border: 3px solid #e07171;
   border-radius: 10px;
   cursor: pointer;
@@ -109,6 +112,7 @@ button[type="reset"] {
   background: #ffffff;
   color: #e07171;
   font-weight: 500;
+  font-size: 1em !important;
   border: 3px solid #e07171;
   border-radius: 10px;
   cursor: pointer;
