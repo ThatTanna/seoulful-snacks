@@ -17,13 +17,12 @@
 }
 
 .socialogo{
-  width: 5dvh;
+  width: 35px;
   cursor: pointer;
 }
 
 .linkedin{
-  width: 8.5dvh;
-  margin-left: -0.4em;
+  width: 60px;
   cursor: pointer;
 
 }
