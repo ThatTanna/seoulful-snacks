@@ -3,7 +3,7 @@ async function saveProduct(authenticated, data={}, file=null){
     
     if(authenticated){
 
-        const queryString = new URLSearchParams(data).toString();
+        // const queryString = new URLSearchParams(data).toString();
         
         // Create a FormData object to send the data via fetch api
         let formData = new FormData();
@@ -25,12 +25,13 @@ async function saveProduct(authenticated, data={}, file=null){
         const status = response.status;
         let result = null;
 
-        if(status === 201)
+        if(status === 201){
             result = await response.json();
-        return status;
+            return result;
+        }
+        
+        return;
 
     }
-    return "product not saved";
+    return;
 };
-
-JSON.stringify(data)

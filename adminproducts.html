@@ -1,59 +1,276 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="css/admin.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&family=Outfit:wght@100..900&family=Overpass:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
+    <!-- Header + Footer Components -->
+    <script src="components/adminheader.js" type="text/javascript" defer></script>
+    <script src="components/footer.js" type="text/javascript" defer></script>
 </head>
 <body>
-    <form id="uploadForm">
-        <label for="txtName">Name:</label>
-        <input type="text" id="txtName" name="txtName" required><br><br>
-        
-        <label for="txtDesc">Description:</label>
-        <input type="text" id="txtDesc" name="txtDesc" required><br><br>
+    <!-- Navbar -->
+    <header-component></header-component>
+    <!-- Form Container -->
+    <div class="container-lg">
+        <div class="admin-title my-2">
+            <h1>Add Product</h1>
+        </div>
+        <div class="productinputs p-5">
+            <form id="uploadForm">
+                <div class="addproduct">
+                    <label>Product Name:</label>
+                    <input type="text" id="txtName" placeholder="E.g. Package XX"> <br>
+                    <label>Description:</label>
+                    <textarea id="txtDesc" rows="6">  </textarea> <br>
+                    <label>Price:</label>
+                    <input type="text" id="txtPrice" placeholder="$"> <br>
+                    <div class="form-group">
+                        <label for="photoInput">Upload Photo Here:</label><br>
+                        <input type="file" class="form-control-file" id="file" name="photo"><br><br>
+                    </div>
+                    <button type="submit" class="btn">Upload</button>
+                    <button type="reset" class="btn">Reset</button>
+                </div>
+            </form>
+        </div>
 
-        <label for="txtPrice">Price:</label>
-        <input type="text" id="txtPrice" name="txtPrice" required><br><br>
-        
-        <label for="file">Upload JPEG:</label>
-        <input type="file" id="file" name="file" required><br><br>
-        
-        <button type="submit">Submit</button>
-    </form>
-    <script src="components/adminauth.js"></script>
-    <script src="components/adminproducts.js"></script>
-    <script>
+        <div class="admin-title my-2">
+            <h1>Our Products</h1>
+        </div>
 
-        // TODO: Only authenicated AMIN users can save product information (DONE)
-        (() => {
-            const authenitcated = adminauth();
-        })();
+        <!-- Product Container -->
+        <div class="container-fluid card rounded-5">
+            <div class=" product-card p-5">
+                <!-- First row -->
+                <div class="row first-row">
+                    <div class="col-md-4">
+                        <img src="images/cart/korean-snack-box.webp" width="100%" height="250">
+                    </div>
+                    <div class="col-md-7">
+                        <div class="card-body">
+                            <h5 class="card-title">Petite K-Treat Taster</h5>
+                            <ul class="snack-infor">
+                                <li>Gim (Roasted Seaweed Sheets),</li>
+                                <li>Korean Rice Crackers (Variety Pack),</li>
+                                <li> Korean Candies (Yuja, Green Tea Candy, Rice Candy Bar),</li>
+                                <li>Korean Soda (Melon or Strawberry)</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-1">
+                        <div class="buttons">
+                            <button type="button" class="btn edit btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal"
+                                data-bs-whatever="@getbootstrap">Edit</button>
+                            
+                            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true"
+                                style="display: none;">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h1 class="modal-title fs-5" id="exampleModalLabel">Edit</h1>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <form>
+                                                <label>Product Name:</label>
+                                                <input type="text"> <br>
+                                                <label>Description:</label>
+                                                <textarea rows="6">  </textarea> <br>
+                                                <label>Price:</label>
+                                                <input type="text"> <br>
+                                                <div class="form-group">
+                                                    <label for="photoInput">Upload Photo Here:</label>
+                                                    <input type="file" class="form-control-file" id="photoInput" name="photo">
+                                                </div>
+                                            </form>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-primary">Done</button>
+                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
 
-        // TODO: eventListener to submit the product information
-        document.getElementById('uploadForm').addEventListener('submit', async(event) => {
-            
-            // Prevent default form submission
-            event.preventDefault(); 
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <br> <button type="delete" class="btn my-2">Delete</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Second row -->
+                <div class="row second-row">
+                    <div class="col-md-4">
+                        <img src="images/products/premium-snack-box.JPG" width="100%" height="250">
+                    </div>
+                    <div class="col-md-7">
+                        <div class="card-body">
+                            <h5 class="card-title">K-Treat Discovery Box</h5>
+                            <ul class="snack-infor">
+                                <li>Pre-made Kimchi Jeon (Kimchi Pancake)</li>
+                                <li>Korean Dried Fruits & Seaweed Snacks (Variety Pack)</li>
+                                <li>Korean Noodle Salad (DIY)</li>
+                                <li>Korean Yogurt Parfait (Fruits & Yogurt)</li>
+                                <li>Korean Milk (Banana, Melon, Strawberry)</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-1">
+                        <div class="buttons">
+                            <button type="button" class="btn edit btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal"
+                                data-bs-whatever="@getbootstrap">Edit</button>
+                            
+                            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true"
+                                style="display: none;">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h1 class="modal-title fs-5" id="exampleModalLabel">Edit</h1>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <form>
+                                                <label>Product Name:</label>
+                                                <input type="text"> <br>
+                                                <label>Description:</label>
+                                                <textarea rows="6">  </textarea> <br>
+                                                <label>Price:</label>
+                                                <input type="text"> <br>
+                                                <div class="form-group">
+                                                    <label for="photoInput">Upload Photo Here:</label>
+                                                    <input type="file" class="form-control-file" id="photoInput" name="photo">
+                                                </div>
+                                            </form>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-primary">Done</button>
+                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
 
-            const name = document.getElementById('txtName').value;
-            const description = document.getElementById('txtDesc').value;
-            const price = document.getElementById('txtPrice').value;
-            const file = document.getElementById('file').files[0];
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <br> <button type="delete" class="btn my-2">Delete</button>
+                        </div>
+                    </div>
+                </div>
 
-            // Create a JSON object for the product information
-            let data = {
-                name: name,
-                description: description,
-                price: price
-            };
+                <!-- Third row -->
+                <div class="row third-row m-auto">
+                    <div class="col-md-4">
+                        <img src="images/cart/cart 3.png" width="100%" height="250">
+                    </div>
+                    <div class="col-md-7">
+                        <div class="card-body">
+                            <h5 class="card-title">K-Treat Treasure Chest</h5>
+                            <ul class="snack-infor">
+                                <li>Korean Kimbap Bowls (Deconstructed, Smoked Salmon)</li>
+                                <li>Korean Fruit Salad (Premium Fruits)</li>
+                                <li>Korean Rice Crackers & Dips (Gourmet Crackers, Kimchi Cream Cheese, Truffle
+                                    Gochujang Mayo)</li>
+                                <li>Korean Banchan (Seasoned Seaweed Salad, Marinated Edamame, Spicy Cucumber
+                                    Kimchi)</li>
+                                <li>Korean Tea (Ginseng, Oolong) or Makgeolli (Rice Wine)</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-1">
+                        <div class="buttons">
+                            <button type="button" class="btn edit btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal"
+                                data-bs-whatever="@getbootstrap">Edit</button>
+                            
+                            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true"
+                                style="display: none;">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h1 class="modal-title fs-5" id="exampleModalLabel">Edit</h1>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <form>
+                                                <label>Product Name:</label>
+                                                <input type="text"> <br>
+                                                <label>Description:</label>
+                                                <textarea rows="6">  </textarea> <br>
+                                                <label>Price:</label>
+                                                <input type="text"> <br>
+                                                <div class="form-group">
+                                                    <label for="photoInput">Upload Photo Here:</label>
+                                                    <input type="file" class="form-control-file" id="photoInput" name="photo">
+                                                </div>
+                                            </form>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-primary">Done</button>
+                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
 
-            // Send authentication and product information to saveProduct
-            const result = await saveProduct(authenticated, data, file)
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <br> <button type="delete" class="btn my-2">Delete</button>
+                        </div>
+                    </div>
+                </div>
 
-            alert(result);
-        });
-        
-    </script>
+        </div>
+        <script src="components/adminauth.js"></script>
+        <script src="components/adminproducts.js"></script>
+        <script>
+            // TODO: Only authenicated AMIN users can save product information (DONE)
+            const authenticated  = adminauth();
+
+            // TODO: eventListener to submit the product information
+            document.getElementById('uploadForm').addEventListener('submit', async(event) => {
+                
+                // Prevent default form submission
+                event.preventDefault(); 
+
+                const name = document.getElementById('txtName').value;
+                const description = document.getElementById('txtDesc').value;
+                const price = document.getElementById('txtPrice').value;
+                const file = document.getElementById('file').files[0];
+
+                // Create a JSON object for the product information
+                let data = {
+                    name: name,
+                    description: description,
+                    price: price
+                };
+
+                // Send authentication and product information to saveProduct
+                const result = await saveProduct(authenticated, data, file)
+
+                // Check the success or failure of saving the object
+                const messageSuccessAdded = "Product added successfully.";
+                const messageFailedAdded = "Product could not be added.";
+                
+                if(result){
+                    alert(messageSuccessAdded);
+                    // TODO: Update the products section (refer to products.js)
+                }
+                else
+                    alert(messageFailedAdded);
+
+                document.getElementById("uploadForm").reset();
+                return;
+            });
+        </script>
+    </div>
+    <!-- Footer -->
+    <footer-component></footer-component>
+    <!-- Footer -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
 </body>
-</html>
+</html> 

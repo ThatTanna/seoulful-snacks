@@ -48,11 +48,8 @@
         crossorigin="anonymous"></script>
         <script src="components/adminauth.js" type="text/javascript"></script>
         <script>
-
-            (() => {
-                // TODO: Only authenicated AMIN users can view admin panel (DONE)
-                const authenitcated = adminauth();
-            })();
+            // TODO: Only authenicated AMIN users can view admin panel (DONE)
+            const authenticated = adminauth();
 
             document.addEventListener("DOMContentLoaded", () => {
                 
