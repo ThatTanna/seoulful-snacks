@@ -29,13 +29,13 @@
             <form id="uploadForm">
                 <div class="addproduct">
                     <label>Product Name:</label>
-                    <input type="text" id="txtName" placeholder="E.g. Package XX"> <br>
+                    <input type="text" id="txtName" placeholder="E.g. K-Pop Party Pack"> <br>
                     <label>Description:</label>
-                    <textarea id="txtDesc" rows="6">  </textarea> <br>
+                    <textarea id="txtDesc" rows="6" placeholder="Enter description here."></textarea> <br>
                     <label>Price:</label>
-                    <input type="text" id="txtPrice" placeholder="$"> <br>
-                    <div class="form-group">
-                        <label for="photoInput">Upload Photo Here:</label><br>
+                    <input type="text" id="txtPrice" placeholder="0.00">
+                    <div class="form-group pt-2">
+                        <label for="photoInput">Upload Photo Here:</label>
                         <input type="file" class="form-control-file" id="file" name="photo"><br><br>
                     </div>
                     <button type="submit" class="btn">Upload</button>
@@ -50,177 +50,60 @@
 
         <!-- Product Container -->
         <div class="container-fluid card rounded-5">
-            <div class=" product-card p-5">
-                <!-- First row -->
-                <div class="row first-row">
-                    <div class="col-md-4">
-                        <img src="images/cart/korean-snack-box.webp" width="100%" height="250">
-                    </div>
-                    <div class="col-md-7">
-                        <div class="card-body">
-                            <h5 class="card-title">Petite K-Treat Taster</h5>
-                            <ul class="snack-infor">
-                                <li>Gim (Roasted Seaweed Sheets),</li>
-                                <li>Korean Rice Crackers (Variety Pack),</li>
-                                <li> Korean Candies (Yuja, Green Tea Candy, Rice Candy Bar),</li>
-                                <li>Korean Soda (Melon or Strawberry)</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-md-1">
-                        <div class="buttons">
-                            <button type="button" class="btn edit btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal"
-                                data-bs-whatever="@getbootstrap">Edit</button>
-                            
-                            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true"
-                                style="display: none;">
-                                <div class="modal-dialog">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <h1 class="modal-title fs-5" id="exampleModalLabel">Edit</h1>
-                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                        </div>
-                                        <div class="modal-body">
-                                            <form>
-                                                <label>Product Name:</label>
-                                                <input type="text"> <br>
-                                                <label>Description:</label>
-                                                <textarea rows="6">  </textarea> <br>
-                                                <label>Price:</label>
-                                                <input type="text"> <br>
-                                                <div class="form-group">
-                                                    <label for="photoInput">Upload Photo Here:</label>
-                                                    <input type="file" class="form-control-file" id="photoInput" name="photo">
-                                                </div>
-                                            </form>
-                                        </div>
-                                        <div class="modal-footer">
-                                            <button type="button" class="btn btn-primary">Done</button>
-                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
 
-                                        </div>
-                                    </div>
+            <section id="product-cards-container" class="flex-row w-100">
+                <!-- product cards go here. -->
+            </section>
+
+            <!-- Modal for Edit goes here -->
+            <div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true" style="display: none;">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="editModalLabel">Edit Product</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <form id="udpateForm">
+                                <label>Product Name:</label>
+                                <input id="modalProductName" type="text"> <br>
+                                <label>Description:</label>
+                                <textarea id="modalProductDesc" rows="6"></textarea> <br>
+                                <label>Price:</label>
+                                <input id="modalProductPrice" type="text"> <br>
+                                <div class="form-group pt-2">
+                                    <label for="photoInput">Upload Photo Here:</label>
+                                    <input id="modalFile" type="file" class="form-control-file" id="photoInput" name="photo">
                                 </div>
-                            </div>
-                            <br> <button type="delete" class="btn my-2">Delete</button>
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button id="btnUpdateProduct" type="button" class="btn btn-primary">Update</button>
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+
                         </div>
                     </div>
                 </div>
-                <!-- Second row -->
-                <div class="row second-row">
-                    <div class="col-md-4">
-                        <img src="images/products/premium-snack-box.JPG" width="100%" height="250">
-                    </div>
-                    <div class="col-md-7">
-                        <div class="card-body">
-                            <h5 class="card-title">K-Treat Discovery Box</h5>
-                            <ul class="snack-infor">
-                                <li>Pre-made Kimchi Jeon (Kimchi Pancake)</li>
-                                <li>Korean Dried Fruits & Seaweed Snacks (Variety Pack)</li>
-                                <li>Korean Noodle Salad (DIY)</li>
-                                <li>Korean Yogurt Parfait (Fruits & Yogurt)</li>
-                                <li>Korean Milk (Banana, Melon, Strawberry)</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-md-1">
-                        <div class="buttons">
-                            <button type="button" class="btn edit btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal"
-                                data-bs-whatever="@getbootstrap">Edit</button>
-                            
-                            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true"
-                                style="display: none;">
-                                <div class="modal-dialog">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <h1 class="modal-title fs-5" id="exampleModalLabel">Edit</h1>
-                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                        </div>
-                                        <div class="modal-body">
-                                            <form>
-                                                <label>Product Name:</label>
-                                                <input type="text"> <br>
-                                                <label>Description:</label>
-                                                <textarea rows="6">  </textarea> <br>
-                                                <label>Price:</label>
-                                                <input type="text"> <br>
-                                                <div class="form-group">
-                                                    <label for="photoInput">Upload Photo Here:</label>
-                                                    <input type="file" class="form-control-file" id="photoInput" name="photo">
-                                                </div>
-                                            </form>
-                                        </div>
-                                        <div class="modal-footer">
-                                            <button type="button" class="btn btn-primary">Done</button>
-                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
 
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <br> <button type="delete" class="btn my-2">Delete</button>
-                        </div>
+            <!-- Modal for Delete goes here -->
+            <div class="modal" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true" style="display: none;">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title">Delete Product</h5>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
+                    <div class="modal-body">
+                      <p>You are about to delete product.</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button id="btnDeleteProduct" type="button" class="btn btn-primary">Delete</button>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    </div>
+                  </div>
                 </div>
-
-                <!-- Third row -->
-                <div class="row third-row m-auto">
-                    <div class="col-md-4">
-                        <img src="images/cart/cart 3.png" width="100%" height="250">
-                    </div>
-                    <div class="col-md-7">
-                        <div class="card-body">
-                            <h5 class="card-title">K-Treat Treasure Chest</h5>
-                            <ul class="snack-infor">
-                                <li>Korean Kimbap Bowls (Deconstructed, Smoked Salmon)</li>
-                                <li>Korean Fruit Salad (Premium Fruits)</li>
-                                <li>Korean Rice Crackers & Dips (Gourmet Crackers, Kimchi Cream Cheese, Truffle
-                                    Gochujang Mayo)</li>
-                                <li>Korean Banchan (Seasoned Seaweed Salad, Marinated Edamame, Spicy Cucumber
-                                    Kimchi)</li>
-                                <li>Korean Tea (Ginseng, Oolong) or Makgeolli (Rice Wine)</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-md-1">
-                        <div class="buttons">
-                            <button type="button" class="btn edit btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal"
-                                data-bs-whatever="@getbootstrap">Edit</button>
-                            
-                            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true"
-                                style="display: none;">
-                                <div class="modal-dialog">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <h1 class="modal-title fs-5" id="exampleModalLabel">Edit</h1>
-                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                        </div>
-                                        <div class="modal-body">
-                                            <form>
-                                                <label>Product Name:</label>
-                                                <input type="text"> <br>
-                                                <label>Description:</label>
-                                                <textarea rows="6">  </textarea> <br>
-                                                <label>Price:</label>
-                                                <input type="text"> <br>
-                                                <div class="form-group">
-                                                    <label for="photoInput">Upload Photo Here:</label>
-                                                    <input type="file" class="form-control-file" id="photoInput" name="photo">
-                                                </div>
-                                            </form>
-                                        </div>
-                                        <div class="modal-footer">
-                                            <button type="button" class="btn btn-primary">Done</button>
-                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <br> <button type="delete" class="btn my-2">Delete</button>
-                        </div>
-                    </div>
-                </div>
+            </div>
 
         </div>
         <script src="components/adminauth.js"></script>
@@ -248,7 +131,7 @@
                 };
 
                 // Send authentication and product information to saveProduct
-                const result = await saveProduct(authenticated, data, file)
+                const result = await saveProduct(authenticated, data, file);
 
                 // Check the success or failure of saving the object
                 const messageSuccessAdded = "Product added successfully.";
@@ -256,7 +139,8 @@
                 
                 if(result){
                     alert(messageSuccessAdded);
-                    // TODO: Update the products section (refer to products.js)
+                    // the products section
+                    productResult();
                 }
                 else
                     alert(messageFailedAdded);
@@ -264,6 +148,142 @@
                 document.getElementById("uploadForm").reset();
                 return;
             });
+
+            // TODO: display the products results (DONE)
+            const productResult = async ()=>{
+
+                const productItems =await getAdminProducts();
+                const productCardsContainer = document.getElementById("product-cards-container");
+
+                // Clear the container first before populating the products
+                while (productCardsContainer.hasChildNodes()) {
+                    productCardsContainer.removeChild(productCardsContainer.firstChild);
+                }
+
+                productItems.forEach(item => {
+                addProductCard(productCardsContainer, item);
+                });
+            
+            };
+
+            productResult();  
+
+            // TODO: tracks if the modal Pops up to retrieve the selected product (DONE)
+            const handleIntersection = (entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+
+                        // if the target is the edit 
+                        if(entry.target.id === "editModal"){
+                            const editId = window.location.href.match(/edit=([^&]*)/);
+                            // get the product selected and populate the input fields
+                            const product = getAdminProduct(authenticated, editId[1]);
+                            
+                            // populate the fields
+                            product.then((data) => {
+                                document.getElementById("modalProductName").value = data["name"];
+                                document.getElementById("modalProductDesc").value = data["description"];
+                                document.getElementById("modalProductPrice").value = (Math.round(data["price"] * 100) / 100).toFixed(2);
+                            })
+                        }
+
+                    }
+                });
+            };
+
+            // create a new Intersection Observer instance
+            const observer = new IntersectionObserver(handleIntersection);
+
+            // set the target element to observe
+            const targetElementEdit = document.getElementById("editModal");
+            const targetElementDelete = document.getElementById("deleteModal");
+
+            // start observing the target element
+            observer.observe(targetElementEdit);
+            observer.observe(targetElementDelete);
+
+            // TODO: Update the product when the user selects btnUdpateProduct
+            document.getElementById("btnUpdateProduct").addEventListener("click", async(event) => {
+                event.preventDefault();
+                event.stopPropagation();
+
+                const modalName = document.getElementById("modalProductName").value;
+                const modalDesc = document.getElementById("modalProductDesc").value;
+                const modalPrice = document.getElementById("modalProductPrice").value;
+                const modalFile = document.getElementById('modalFile').files[0];
+                
+                // Create a JSON object for the product information
+                let modalData = {
+                    name: modalName,
+                    description: modalDesc,
+                    price: modalPrice
+                };
+
+                // get the product selected via the url #tag
+                const editId = window.location.href.match(/edit=([^&]*)/);
+
+                // Send authentication and product information to saveProduct
+                const result = await saveUpdatedProduct(authenticated, editId[1], modalData, modalFile);
+                
+                // Check the success or failure of saving the object
+                const messageSuccessEdited = "Product updated successfully.";
+                const messageFailedEdited = "Product could not be updated.";
+
+                if(result){
+
+                    // hide the modal that updates the product
+                    let modalElement = document.getElementById("editModal");
+                    let updateModal = bootstrap.Modal.getInstance(modalElement);
+                    updateModal.hide();
+
+                    // show the success message
+                    alert(messageSuccessEdited);
+
+                    // invoke productResults to re-list the products section (DONE)
+                    productResult();
+                }
+                else{
+                    alert(messageFailedEdited);
+                }
+                
+                return;
+
+            })
+
+            // TODO: Update the product when the user selects btnUdpateProduct
+            document.getElementById("btnDeleteProduct").addEventListener("click", async(event) => {
+                event.preventDefault();
+                event.stopPropagation();
+
+                const deleteId = window.location.href.match(/delete=([^&]*)/);
+                // get the product selected and populate the input fields
+                const result = await deleteProduct(authenticated, deleteId[1]);
+
+                // Check the success or failure of saving the object
+                const messageSuccessDeleted = "Product deleted successfully.";
+                const messageFailedDeleted = "Product could not be deleted.";
+
+                if(result){
+
+                    // hide the modal that updates the product
+                    let modalElement = document.getElementById("deleteModal");
+                    let deleteModal = bootstrap.Modal.getInstance(modalElement);
+                    deleteModal.hide();
+
+                    // show the success message
+                    alert(messageSuccessDeleted);
+
+                    // invoke productResults to re-list the products section (DONE)
+                    productResult();
+                }
+                else{
+                    alert(messageFailedDeleted);
+                }
+                
+
+                // invoke productResults to re-list the products section (DONE)
+                productResult();
+            })
         </script>
     </div>
     <!-- Footer -->

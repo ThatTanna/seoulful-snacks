@@ -106,7 +106,7 @@
 
             // Product Description
             let cartPrice = cartItem.price;
-            cartPrice = parseInt(cartPrice).toFixed(2);
+            cartPrice = (Math.round(cartPrice * 100) / 100).toFixed(2);
             document.getElementById("card-price").innerText = `$${cartPrice}`;
 
             // Product Image
