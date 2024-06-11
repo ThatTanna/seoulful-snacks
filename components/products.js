@@ -27,7 +27,7 @@ async function getProducts(){
 
     return status === 200 ? data : [];
   
-  };
+};
 
 
 // TODO: fill the cards and apply it to the productCardsContainer with the product Items
