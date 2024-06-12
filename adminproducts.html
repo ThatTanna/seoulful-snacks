@@ -38,8 +38,32 @@
                         <label for="photoInput">Upload Photo Here:</label>
                         <input type="file" class="form-control-file" id="file" name="photo"><br><br>
                     </div>
-                    <button type="submit" class="btn">Upload</button>
+                    <!-- Upload & Reset Buttons -->
+                    <button type="button" class="btn" id="liveToastBtn">Upload</button>
                     <button type="reset" class="btn">Reset</button>
+
+                    <!-- successful upload button toast -->
+                    <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+                        <div class="toast-header">
+                          <strong class="me-auto">Uploaded</strong>
+                          <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+                        </div>
+                        <div class="toast-body">
+                          Product Added Successfully!
+                        </div>
+                      </div>
+
+                    <script>
+                        // Display result on click
+                        const toastTrigger = document.getElementById('liveToastBtn')
+                        const toastLiveExample = document.getElementById('liveToast')
+                        if (toastTrigger) {
+                             const toastBootstrap = bootstrap.Toast.getOrCreateInstance(toastLiveExample)
+                             toastTrigger.addEventListener('click', () => {
+                             toastBootstrap.show()
+                             })
+                            }
+                    </script>
                 </div>
             </form>
         </div>
