@@ -102,7 +102,7 @@ async function saveUpdatedProduct(authenticated, id, modalData={}, modalFile=nul
         };
         
         const api = `http://localhost:8080/admin/api/product/update/${id}`
-        console.log(api);
+
         // Send the request
         const response = await fetch(api, request);
         const status = response.status;

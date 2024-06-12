@@ -17,3 +17,28 @@ fetch("https://restcountries.com/v3.1/all")
         });
     });
 
+
+ async function addSubscription(authenticated, product_id, {email, mailing_address, qty}){
+        const request = {
+            method: "POST",
+            headers: {
+                "Authorization": `Bearer ${authenticated}`,
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                email: email,
+                mailing_address: mailing_address,
+                qty: qty
+            })
+        };
+    
+        // send the request to add the submission to the server
+        const api = `http://localhost:8080/user/api/subscription/add/${product_id}`
+        const response = await fetch(api, request);
+        const status = response.status;
+    
+        // Return the result only if the status is 200 (OK), else return false
+        return status === 201 ? true : false;
+    
+    }
+    

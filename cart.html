@@ -48,9 +48,13 @@
                                 </p>
                                 <div class="row">
                                     <div class="btn-group col-md-5" role="group" aria-label="Basic example">
-                                        <button type="button" class="border btn bi bi-dash-circle"></button>
-                                        <button type="button" class="border btn">1</button>
-                                        <button type="button" class="border btn bi bi-plus-circle"></button>
+                                        <button type="button" class="border btn bi bi-dash-circle" id="btnMinus">
+                                        </button>
+                                        <button type="button" class="border btn" id="btnQuantity">
+                                            <!-- TODO: Quantity Goes Here -->
+                                        </button>
+                                        <button type="button" class="border btn bi bi-plus-circle" id="btnPlus">
+                                        </button>
                                     </div>
                                     <div id="card-price" class="col-md-7 m-auto">
                                         <!-- TODO: Cart Price Goes Here -->
@@ -67,11 +71,9 @@
         </section>
         <article>
             <div class="checkout text-center">
-                <a href="checkout.html">
-                    <button type="button" class="checkout-button btn  bi bi-cart-fill">
-                        Continue to checkout
-                    </button>
-                </a>
+                <button id="btnCheckout" type="button" class="checkout-button btn  bi bi-cart-fill">
+                    Continue to checkout
+                </button>
             </div>
         </article>
     </main>
@@ -115,7 +117,48 @@
             document.getElementById("card-image").setAttribute("src", "http://localhost:8080" + cartImage);
 
         };
+
         cartResult();
+
+        // TODO: manage the quantity on the cart page
+        let productQuantity = 0;
+        const btnQty = document.getElementById("btnQuantity");
+
+        // TODO: set btnQuantity a default value of 1
+        document.addEventListener("DOMContentLoaded", () => {
+            productQuantity = 1;
+            btnQty.innerText = productQuantity; 
+        })
+
+        // TODO: btnPlus adds one more item to the cart
+        document.getElementById("btnPlus").addEventListener("click",(event) => {
+            productQuantity += 1;
+            btnQty.innerText = productQuantity;
+        })
+
+        // TODO: btnMinus removes one item from the cart
+        document.getElementById("btnMinus").addEventListener("click",(event) => {
+            if(productQuantity >= 2)
+                productQuantity -= 1;
+            btnQty.innerText = productQuantity;
+        })
+
+        // TODO: btnCheckout goes to the checkout page with the quantity (DONE)
+        document.getElementById("btnCheckout").addEventListener("click",(event) => {
+            event.preventDefault();
+            event.stopPropagation();
+
+            let url = window.location.origin;
+            url += "/checkout.html";
+
+            let urlParameters = new URLSearchParams(window.location.search);
+            let package = urlParameters.get("package");
+
+            url += `?package=${package}&qty=${productQuantity}`;
+            window.location = url;
+            return;
+        })
+
     </script>
 </body>
 
