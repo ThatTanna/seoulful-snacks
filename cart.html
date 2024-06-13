@@ -31,7 +31,7 @@
                     <div class="row g-0">
                         <div class="col-md-4">
                             <!-- TODO: Cart Image Goes Here -->
-                            <img id="card-image" src="images/cart/korean-snack-box.webp"
+                            <img id="card-image" src="images/cart/no-image.png"
                                 class="border border-5 border-danger-subtle rounded img-fluid rounded-start"
                                 alt="real-pizza-bagel-chip">
                         </div>
@@ -42,7 +42,7 @@
                                     <!-- TODO: Cart Title Goes Here -->
                                 </h5>
 
-                                <button type="button" class="btn bi bi-trash col-md-2"></button>
+                                <button type="button" class="btn bi bi-trash col-md-2" id="btnClearCart"></button>
                                 <p id="card-description" class="card-text">
                                     <!-- TODO: Cart Desc Goes Here -->
                                 </p>
@@ -60,9 +60,6 @@
                                         <!-- TODO: Cart Price Goes Here -->
                                     </div>
                                 </div>
-                                <!-- <p class="card-text">
-                                    <small class="text-body-secondary">Added to cart 3 mins ago</small>
-                                </p> -->
                             </div>
                         </div>
                     </div>
@@ -88,11 +85,46 @@
         // TODO: get the athenication token (DONE)
         const authenticated = auth();
 
+        // TODO: manage the quantity on the cart page
+        let productQuantity = 0;
+        let cartPrice = 0;
+        const btnQty = document.getElementById("btnQuantity");
+
+        // get the urlParam for package
+        let urlParams = new URLSearchParams(window.location.search);
+        let package = urlParams.get("package");
+        let quantity = urlParams.get("qty");
+
+        // TODO: set btnQuantity a default value of 1
+        document.addEventListener("DOMContentLoaded", () => {
+            
+            if(quantity){
+                productQuantity = Number(quantity);
+            }
+            else
+            {
+                productQuantity = 1;
+            }                
+
+            btnQty.innerText = productQuantity;
+
+            // hide the checkout button if no package is selected
+            if(!package){
+                const btnChkout = document.getElementById("btnCheckout");
+                btnChkout.style.display = "none";
+            }
+        })
+
         // TODO: display the cart results (DONE)
         const cartResult = async ()=>{
 
-            var urlParams = new URLSearchParams(window.location.search);
-            let package = urlParams.get("package");
+            if(!package){
+                // Inform the user that no product has been found
+                document.getElementById("card-title").innerText = "No product found.";
+                document.getElementById("card-description").innerText = "Please subscribe to a product.";
+                document.getElementById("card-price").innerText = "$0.00";
+                return;
+            }
 
             const cartItem =await getCart(authenticated, package);
             
@@ -106,34 +138,40 @@
             cartDesc = cartDesc.charAt(0).toUpperCase() + cartDesc.slice(1);
             document.getElementById("card-description").innerText = cartDesc;
 
-            // Product Description
-            let cartPrice = cartItem.price;
-            cartPrice = (Math.round(cartPrice * 100) / 100).toFixed(2);
-            document.getElementById("card-price").innerText = `$${cartPrice}`;
+            // Product Price
+            cartPrice = cartItem.price;
+            let quantityPrice = 0;
+            
+            if(quantity){
+                quantityPrice = cartPrice * productQuantity;
+                quantityPrice = (Math.round(quantityPrice * 100) / 100).toFixed(2);
+                document.getElementById("card-price").innerText = `$${quantityPrice}`;
+            }else{
+                cartPrice = (Math.round(cartPrice * 100) / 100).toFixed(2);
+                document.getElementById("card-price").innerText = `$${cartPrice}`;
+            }
+            
+            if(package){
+                // Product Image
+                let cartImage = cartItem.imagePath;
+                document.getElementById("card-image").setAttribute("style", "background-color:red;");
+                document.getElementById("card-image").setAttribute("src", "http://localhost:8080" + cartImage);
+            }
 
-            // Product Image
-            let cartImage = cartItem.imagePath;
-            document.getElementById("card-image").setAttribute("style", "background-color:red;");
-            document.getElementById("card-image").setAttribute("src", "http://localhost:8080" + cartImage);
 
+            return;
         };
 
         cartResult();
-
-        // TODO: manage the quantity on the cart page
-        let productQuantity = 0;
-        const btnQty = document.getElementById("btnQuantity");
-
-        // TODO: set btnQuantity a default value of 1
-        document.addEventListener("DOMContentLoaded", () => {
-            productQuantity = 1;
-            btnQty.innerText = productQuantity; 
-        })
 
         // TODO: btnPlus adds one more item to the cart
         document.getElementById("btnPlus").addEventListener("click",(event) => {
             productQuantity += 1;
             btnQty.innerText = productQuantity;
+            cartPrice = (Math.round(cartPrice * 100) / 100).toFixed(2);
+            let totalPrice = cartPrice * productQuantity;
+            totalPrice = (Math.round(totalPrice * 100) / 100).toFixed(2);
+            document.getElementById("card-price").innerText = `$${totalPrice}`;
         })
 
         // TODO: btnMinus removes one item from the cart
@@ -141,6 +179,10 @@
             if(productQuantity >= 2)
                 productQuantity -= 1;
             btnQty.innerText = productQuantity;
+            cartPrice = (Math.round(cartPrice * 100) / 100).toFixed(2);
+            let totalPrice = cartPrice * productQuantity;
+            totalPrice = (Math.round(totalPrice * 100) / 100).toFixed(2);
+            document.getElementById("card-price").innerText = `$${totalPrice}`;
         })
 
         // TODO: btnCheckout goes to the checkout page with the quantity (DONE)
@@ -151,12 +193,22 @@
             let url = window.location.origin;
             url += "/checkout.html";
 
-            let urlParameters = new URLSearchParams(window.location.search);
-            let package = urlParameters.get("package");
-
+            if(!package){
+                return;
+            }
+            
             url += `?package=${package}&qty=${productQuantity}`;
             window.location = url;
             return;
+        })
+
+        document.getElementById("btnClearCart").addEventListener("click", (event) => {
+            event.preventDefault();
+            event.stopPropagation();
+
+            let url = window.location.origin;
+            url += "/products.html";
+            window.location = url;
         })
 
     </script>

@@ -29,7 +29,7 @@
                     <h3>Contact</h3>
                     <div class="col-12">
                         <label for="inputEmail" class="form-label">Email</label>
-                        <input type="email" class="form-control" id="inputEmail" required value="tanna@gmail.com">
+                        <input type="email" class="form-control" id="inputEmail" required value="francis@gmail.com">
                     </div>
                     <h3>Delivery</h3>
                     <div class="col-12 country-container">
@@ -79,7 +79,7 @@
                         <div class="col-md-6">
                             <label for="cc-name" class="form-label">Name on card</label>
                             <input type="text" class="form-control" id="cc-name" placeholder="" 
-                            required value="Jackson Lim">
+                            required value="Francis Setho">
                             <small class="text-body-secondary">Full name as displayed on card</small>
                             <div class="invalid-feedback">
                                 Name on card is required
@@ -126,9 +126,11 @@
             <div class="col-5">
                 <h4 class="d-flex justify-content-between align-items-center mb-3">
                     <span>
-                        <h3> Your Cart</h3>
+                        <h3>Your Cart</h3>
                     </span>
-                    <span class="badge bg-secondary rounded-pill">3</span>
+                    <span class="badge bg-secondary rounded-pill" id="quantityPill">
+                        <!-- TODO: Add quantity here -->
+                    </span>
                 </h4>
                 <ul class="list-group mb-3">
                     <li class="list-group-item d-flex justify-content-between lh-sm">
@@ -167,6 +169,19 @@
          // TODO: get the athenication token (DONE)
          const authenticated = auth();
 
+         let matchedQuantity;
+
+         document.addEventListener("DOMContentLoaded", (event) => {
+            // Obtain the quantity from hashed paramter
+            matchedQuantity = window.location.href.match(/qty=([^&]*)/);
+            if(!matchedQuantity){
+                document.getElementById("quantityPill").textContent = "0";
+                return;
+            }
+            document.getElementById("quantityPill").textContent = matchedQuantity[1];
+            return;
+        })
+
          // TODO: display the cart item - using cart.js (DONE)
         const cartResult = async ()=>{
 
@@ -185,11 +200,16 @@
             cartDesc = cartDesc.charAt(0).toUpperCase() + cartDesc.slice(1);
             document.getElementById("card-description").innerText = cartDesc;
 
-            // Product Description
-            let cartPrice = cartItem.price;
+            // Product Price
+            let cartPrice = cartItem.price;                         // get product price
+            let totalCartPrice = cartPrice * matchedQuantity[1];    // get total prices 
+
             cartPrice = (Math.round(cartPrice * 100) / 100).toFixed(2);
             document.getElementById("card-price").innerText = `$${cartPrice}`;
-            document.getElementById("card-price-total").innerText = `$${cartPrice}`;
+
+            
+            totalCartPrice = (Math.round(totalCartPrice * 100) / 100).toFixed(2);
+            document.getElementById("card-price-total").innerText = `$${totalCartPrice}`;
         };
 
         cartResult();

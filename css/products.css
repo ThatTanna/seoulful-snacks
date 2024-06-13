@@ -1,17 +1,14 @@
 /* Style the images */
-.product-card {
-  position: relative;
+.card.product-card {
   /* Make each image flex equally within the container */
   padding-bottom: 1.0em;
   /* Set image height to auto */
-  object-fit: cover;
   /* Cover the entire image area while maintaining aspect ratio */
-  border: solid lightgrey 1px;
+  border: solid #e07171 4px;
   border-radius: 15px;
 }
 
 .snack-infor {
-  height: 200px;
   padding: 0.3em;
 }
 
