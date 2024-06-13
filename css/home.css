@@ -1,13 +1,18 @@
 .banner {
-  height: 40dvh;
-  object-fit: cover;
+  height: 45dvh;
+  object-fit:cover;
   border: 3px solid #e99b9b;
 }
 
 .small-banner{
   height: 40dvh;
-  object-fit: cover;
+  object-fit:scale-down ;
   border: 3px #e99b9b solid;
+}
+
+.carousel-caption{
+  background-color: #e99b9b;
+  padding: 0rem;
 }
 
 .slide {
