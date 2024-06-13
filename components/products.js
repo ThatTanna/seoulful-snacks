@@ -34,12 +34,11 @@ async function getProducts(){
 function addProductCard(productCardsContainer, item){
     
 
-    const productCardSection = document.createElement("section");
-    productCardSection.className = "col-md-4 mt-4";
-    productCardsContainer.append(productCardSection);
+    const productCardSection = document.createElement("div");
+    productCardSection.className = "col";
 
-    const productCardArticle = document.createElement("article");
-    productCardArticle.className = "product-card";
+    const productCardArticle = document.createElement("div");
+    productCardArticle.className = "card m-3 product-card h-100";
     productCardSection.append(productCardArticle);
 
     const productCardImage = document.createElement("img");
@@ -50,6 +49,14 @@ function addProductCard(productCardsContainer, item){
     const productCardBody = document.createElement("div");
     productCardBody.className = "card-body";
     productCardArticle.append(productCardBody);
+
+    const productCardButton = document.createElement("button");
+    productCardButton.className = "btn btn-secondary p-2";
+    productCardButton.innerText = "Subscribe here";
+    productCardButton.addEventListener("click", () => {
+      subScribe(item.id);
+    })
+    productCardBody.append(productCardButton);
 
     const productCardTitle = document.createElement("h5");
     productCardTitle.className = "font-weight-bold mt-4";
@@ -65,14 +72,6 @@ function addProductCard(productCardsContainer, item){
     productCardDesc.className = "snack-infor card-text px-4";
     productCardDesc.innerText = item.description;
     productCardBody.append(productCardDesc);
-
-    const productCardButton = document.createElement("button");
-    productCardButton.className = "btn btn-secondary p-2";
-    productCardButton.innerText = "Subscribe here";
-    productCardButton.addEventListener("click", () => {
-      subScribe(item.id);
-    })
-    productCardBody.append(productCardButton);
 
     // Unused in the card
     // <p id="subscribeMessage" class="hidden-message">You have subscribed successfully!</Br></Br>

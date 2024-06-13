@@ -26,7 +26,7 @@ class Header extends HTMLElement {
                 <a class="nav-link" href="about.html">About</a>
               </li>
               <li class="nav-item">
-              <a class="nav-link" href="cart.html" >Cart</a>
+              <a class="nav-link" href="" id="linkCart">Cart</a>
               </li>
               <li class="nav-item">
               <a class="nav-link" href="logout.html" >Logout</a>
@@ -75,7 +75,7 @@ class Header extends HTMLElement {
               <a class="nav-link" href="login.html" >Login</a>
               </li>
               <li class="nav-item">
-              <a class="nav-link" href="cart.html" >Cart</a>
+              <a class="nav-link" href="" id="linkCart">Cart</a>
               </li>
             </ul>
           </div>
@@ -104,7 +104,35 @@ class Header extends HTMLElement {
       this.innerHTML = loggedInBar;
     else
       this.innerHTML = notLoggedInBar;
+
   }
 }
 
 customElements.define('header-component', Header);
+
+// Cart link will be controlled based on whether a cart item or quanitity has been selected.
+document.getElementById("linkCart").addEventListener("click", (event)=>{
+  event.preventDefault();
+  event.stopPropagation();
+
+  let urlParams = new URLSearchParams(window.location.search);
+  let package = urlParams.get("package");
+  let quantity = urlParams.get("qty");
+
+  if(package > 0 || quantity > 0){
+
+    let url = window.location.href;
+
+    if(url.indexOf("?") > 0) {
+      url = window.location.origin + "/cart.html?"
+      url += `${window.location.href.split("?")[1]}`;
+    }
+    window.location = url;
+    return;
+  }else{
+    let url = window.location.origin + "/cart.html"
+    window.location = url;
+    return;
+  }
+
+});

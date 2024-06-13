@@ -1,5 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
-    async function getUsers({ currentLoggedInUserEmail, api }) {
+    
+    async function getUser({ currentLoggedInUserEmail, api }) {
         const params = {
             "email": currentLoggedInUserEmail
         };
@@ -12,8 +13,8 @@ document.addEventListener('DOMContentLoaded', () => {
             headers: {
                 'Authorization': `Bearer ${localStorage.getItem("token")}`
             }
-        }
-        );
+        });
+        
         const status = response.status;
         const data = await response.json();
 

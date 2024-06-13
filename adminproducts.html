@@ -16,6 +16,7 @@
     <!-- Header + Footer Components -->
     <script src="components/adminheader.js" type="text/javascript" defer></script>
     <script src="components/footer.js" type="text/javascript" defer></script>
+    <script src="components/validation.js" type="text/javascript" defer></script>
 </head>
 <body>
     <!-- Navbar -->
@@ -38,7 +39,7 @@
                         <label for="photoInput">Upload Photo Here:</label>
                         <input type="file" class="form-control-file" id="file" name="photo"><br><br>
                     </div>
-                    <button type="submit" class="btn">Upload</button>
+                    <button type="submit" class="btn">Add Product</button>
                     <button type="reset" class="btn">Reset</button>
                 </div>
             </form>
@@ -136,16 +137,22 @@
                 // Check the success or failure of saving the object
                 const messageSuccessAdded = "Product added successfully.";
                 const messageFailedAdded = "Product could not be added.";
+
+                // Get toast element
+                const toastElement = document.getElementById("msg-toast");
+                const toastBodyElement = document.getElementById("msg-toast-body");
                 
                 if(result){
-                    alert(messageSuccessAdded);
-                    // the products section
+                    
+                    // show the success message
+                    showToast({ toastElement, toastBodyElement, bgColor: "success", msg: messageSuccessAdded });
+                    document.getElementById("uploadForm").reset();
                     productResult();
+                    return;
                 }
-                else
-                    alert(messageFailedAdded);
 
-                document.getElementById("uploadForm").reset();
+                // otherwise show the failed message
+                showToast({ toastElement, toastBodyElement, bgColor: "danger", msg: messageFailedAdded });
                 return;
             });
 
@@ -161,7 +168,7 @@
                 }
 
                 productItems.forEach(item => {
-                addProductCard(productCardsContainer, item);
+                    addProductCard(productCardsContainer, item);
                 });
             
             };
@@ -229,6 +236,10 @@
                 const messageSuccessEdited = "Product updated successfully.";
                 const messageFailedEdited = "Product could not be updated.";
 
+                // Get toast element
+                const toastElement = document.getElementById("msg-toast");
+                const toastBodyElement = document.getElementById("msg-toast-body");
+
                 if(result){
 
                     // hide the modal that updates the product
@@ -237,20 +248,20 @@
                     updateModal.hide();
 
                     // show the success message
-                    alert(messageSuccessEdited);
+                    showToast({ toastElement, toastBodyElement, bgColor: "success", msg: messageSuccessEdited });
 
                     // invoke productResults to re-list the products section (DONE)
                     productResult();
+                    return;
                 }
-                else{
-                    alert(messageFailedEdited);
-                }
-                
+
+                // otherwise show the failed message
+                showToast({ toastElement, toastBodyElement, bgColor: "danger", msg: messageFailedEdited });
                 return;
 
             })
 
-            // TODO: Update the product when the user selects btnUdpateProduct
+            // TODO: Update the product when the user selects btnDeleteProduct
             document.getElementById("btnDeleteProduct").addEventListener("click", async(event) => {
                 event.preventDefault();
                 event.stopPropagation();
@@ -263,6 +274,10 @@
                 const messageSuccessDeleted = "Product deleted successfully.";
                 const messageFailedDeleted = "Product could not be deleted.";
 
+                // Get toast element
+                const toastElement = document.getElementById("msg-toast");
+                const toastBodyElement = document.getElementById("msg-toast-body");
+
                 if(result){
 
                     // hide the modal that updates the product
@@ -271,18 +286,17 @@
                     deleteModal.hide();
 
                     // show the success message
-                    alert(messageSuccessDeleted);
+                    showToast({ toastElement, toastBodyElement, bgColor: "success", msg: messageSuccessDeleted });
 
                     // invoke productResults to re-list the products section (DONE)
                     productResult();
+                    return;
                 }
-                else{
-                    alert(messageFailedDeleted);
-                }
-                
 
-                // invoke productResults to re-list the products section (DONE)
-                productResult();
+                //otherwise show the failed message
+                showToast({ toastElement, toastBodyElement, bgColor: "danger", msg: messageFailedEdited });
+                return;
+                
             })
         </script>
     </div>

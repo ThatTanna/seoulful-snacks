@@ -35,9 +35,9 @@ class Header extends HTMLElement {
     </header>
     <!-- toast section -->
     <!-- https://getbootstrap.com/docs/5.3/components/toasts/ --> 
-    <div class="toast-container p-3 top-0 start-50 translate-middle-x">
+    <div class="toast-container position-fixed p-3 top-0 start-50 translate-middle-x">
         <!-- Put toasts within -->
-        <div id="msg-toast" class="toast align-items-center mt-2" role="alert" aria-live="assertive" aria-atomic="true" data-bs-autohide="true" data-bs-delay="4000">
+        <div id="msg-toast" class="toast align-items-center mt-2" role="alert" aria-live="assertive" aria-atomic="true" data-bs-autohide="true" data-bs-delay="8000">
             <div class="d-flex">
                 <div id="msg-toast-body" class="toast-body"> 
                 <!-- Message to be added here -->
@@ -58,9 +58,9 @@ class Header extends HTMLElement {
     </header>
     <!-- toast section -->
     <!-- https://getbootstrap.com/docs/5.3/components/toasts/ --> 
-    <div class="toast-container p-3 top-0 start-50 translate-middle-x">
+    <div class="toast-container position-fixed p-3 top-0 start-50 translate-middle-x">
         <!-- Put toasts within -->
-        <div id="msg-toast" class="toast align-items-center mt-2" role="alert" aria-live="assertive" aria-atomic="true" data-bs-autohide="true" data-bs-delay="4000">
+        <div id="msg-toast" class="toast align-items-center mt-2" role="alert" aria-live="assertive" aria-atomic="true" data-bs-autohide="true" data-bs-delay="8000">
             <div class="d-flex">
                 <div id="msg-toast-body" class="toast-body"> 
                 <!-- Message to be added here -->
